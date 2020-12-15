@@ -2,7 +2,7 @@ import Footer from "../components/reusable/Footer";
 import Header from "../components/reusable/Header";
 import ContactContent from "../components/contactView/ContactContent";
 
-const ContactView = () => {
+const Contact = () => {
   return (
     <>
       <Header />
@@ -12,4 +12,4 @@ const ContactView = () => {
   );
 };
 
-export default ContactView;
+export default Contact;

@@ -82,6 +82,14 @@ This component contains the **ContactForm** component and contact information.
 This component is a select button whose role is to change the language of the entire application.
 
 ### **Footer**
-This component contains the **ContactForm** component, some links and buttons to access modal content.
+This component contains the **LanguageSwitch** component, some links to others page and some buttons to access modal content. 
+ - Links to :
+   - Home (url: '/')
+   - Contact-us (url: '/contact')
+ - Modal content :
+   - Term of use
+   - Privacy Policy
+
+
 
 # Coding

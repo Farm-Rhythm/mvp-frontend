@@ -1,0 +1,18 @@
+@font-face {
+    font-family: 'Karla-Regular';
+    src: url('/src/fonts/Karla/Karla-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Karla-Italic';
+    src: url('/src/fonts/Karla/Karla-Italic.ttf');
+}
+
+@font-face {
+    font-family: 'Lemonada';
+    src: url('/src/fonts/Lemonada/Lemonada-Regular.ttf');
+}
+
+body, * {
+    font-family: 'Karla-Italic';
+}
