@@ -93,3 +93,7 @@ This component contains the **LanguageSwitch** component, some links to others p
 
 
 # Coding
+
+Method to use for formatting views:
+- **@material UI Core and Icon** will provide components. These components encapsulate the desired dynamics
+- **Bootstrap classes** will be used for shaping and embellishment
