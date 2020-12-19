@@ -12,6 +12,8 @@
     - [**LanguageSwitch**](#languageswitch)
     - [**Footer**](#footer)
 - [Coding](#coding)
+    - [Method to use for formatting views:](#method-to-use-for-formatting-views)
+    - [Notes of 19/12/2020:](#notes-of-19122020)
 
 # Resume
 The Contact view allows the user to get in touch with the company, for this he can use the contact form or go through our contact information provided.
@@ -94,6 +96,9 @@ This component contains the **LanguageSwitch** component, some links to others p
 
 # Coding
 
-Method to use for formatting views:
+### Method to use for formatting views:
 - **@material UI Core and Icon** will provide components. These components encapsulate the desired dynamics
 - **Bootstrap classes** will be used for shaping and embellishment
+
+### Notes of 19/12/2020:
+@material UI lacks many icons (brand type), so we'll use **@fontawesome icon** from now on.

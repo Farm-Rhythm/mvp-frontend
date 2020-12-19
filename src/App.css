@@ -1,17 +1,21 @@
 @font-face {
     font-family: 'Karla-Regular';
-    src: url('../src/fonts/Karla/Karla-Regular.ttf');
+    src: url(/src/fonts/Karla/Karla-Regular.ttf);
 }
 
 @font-face {
     font-family: 'Karla-Italic';
-    src: url('../src/fonts/Karla/Karla-Italic.ttf');
+    src: url(/src/fonts/Karla/Karla-Italic.ttf);
 }
 
 @font-face {
-    font-family: 'Lemonada';
-    src: url('../src/fonts/Lemonada/Lemonada-Regular.ttf');
+    font-family: 'Lemonada-Bold';
+    src: url(/src/fonts/Lemonada/Lemonada-Bold.ttf);
 }
+
+/* div.est {
+    background-image: url();
+} */
 
 html, body{
     margin: 0;
