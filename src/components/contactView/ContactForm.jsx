@@ -52,7 +52,7 @@ const ContactForm = () => {
         <Button
           variant="contained"
           fullWidth
-          color="primary"
+          style={{ backgroundColor: "#FFB800" }}
           type="submit"
           className="mt-3 text-white text-capitalize font-weight-bold"
           endIcon={<Send />}

@@ -14,6 +14,9 @@
 - [Coding](#coding)
     - [Method to use for formatting views:](#method-to-use-for-formatting-views)
     - [Notes of 19/12/2020:](#notes-of-19122020)
+    - [Issues:](#issues)
+  - [Notification:](#notification)
+  - [**Time spent on the view :**](#time-spent-on-the-view-)
 
 # Resume
 The Contact view allows the user to get in touch with the company, for this he can use the contact form or go through our contact information provided.
@@ -101,4 +104,21 @@ This component contains the **LanguageSwitch** component, some links to others p
 - **Bootstrap classes** will be used for shaping and embellishment
 
 ### Notes of 19/12/2020:
-@material UI lacks many icons (brand type), so we'll use **@fontawesome icon** from now on.
+- @material UI lacks many icons (brand type), so we'll use **@fontawesome icon** from now on.20+
+- **In the development of this APP, we will start with the visual and then we will tackle the business logic**
+
+
+### Issues:
+- nothing to report
+
+## Notification: 
+During data processing at the backend level, notifications are designed and assigned to users.
+Any information has the potential to create a notification. The information is necessarily created by a first user, following this the data processing will filter all the other users having the preferences required for the creation of notifications related to this type of information, and graft them the new notifications.
+
+So the preferences to be checked must be classified by type of notification to be created. The resulting notification creation system will constitute a business function : **Data processing for Notifications**
+
+***NB:** At the frontend level, we will also have notification templates varying according to the type of notification.*
+
+
+## **Time spent on the view :**
+- Complete and responsive Visual : **7days** (15 - 22 dec 2020)

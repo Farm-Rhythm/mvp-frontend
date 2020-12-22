@@ -14,6 +14,7 @@ import {
 const style = makeStyles({
   root: {
     fontFamily: "Karla-Regular",
+    "& .content": { maxWidth: 1100, margin: "auto" },
     "& .header": {
       backgroundColor: "rgba(196, 196, 196, 0.2)",
       "& .title": {
@@ -59,7 +60,7 @@ const ContactContent = () => {
         <div className={classes.treeDecoration}></div>
       </div>
 
-      <div className="px-2 px-sm-5 py-2 py-md-5 d-flex flex-wrap flex-column flex-md-row">
+      <div className="content px-2 px-sm-5 py-2 py-md-5 d-flex flex-wrap flex-column flex-md-row">
         <div className="col">
           <ContactForm />
         </div>
@@ -87,7 +88,7 @@ const ContactContent = () => {
           </div>
           <div
             style={{ color: "#FFB800" }}
-            className="py-4 px-0 col col-lg-9 d-flex justify-content-start justify-content-sm-center justify-content-md-start flex-wrap"
+            className="py-4 px-0 col col-lg-10 d-flex justify-content-start justify-content-sm-center justify-content-md-start flex-wrap"
           >
             <Button
               color="inherit"

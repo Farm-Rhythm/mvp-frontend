@@ -7,7 +7,6 @@ import './App.css'
 const App = () => {
   return (
     <div>
-      <h1>Hello</h1>
       <Switch>
         <Route path="/contact" component={Contact} />
         <Route path="/" component={Home} />
