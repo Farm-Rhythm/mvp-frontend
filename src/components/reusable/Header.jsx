@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch, faCaretDown } from "@fortawesome/free-solid-svg-icons";
 
 const style = makeStyles({
-  badge: {
+  unreadBadge: {
     color: "#D2BF0E",
     backgroundColor: "white",
     position: "absolute",
@@ -23,38 +23,59 @@ const style = makeStyles({
   },
 });
 
+const GENERAL_CONTAINER = {
+  root: {
+    background:
+      "linear-gradient(180deg, #FFB800 48.96%, rgba(255, 255, 255, 0) 48.97%), #0DA735",
+    fontFamily: "Karla-Italic",
+  },
+  bootstrap: "d-flex align-items-center py-3 px-md-5 px-3 sticky-top border-bottom"
+};
+
+const DYNAMICS_CONTAINER = {
+  bootstrap:
+    "col px-0 px-sm-3 px-md-0 d-flex flex-column flex-md-row align-items-center align-items-sm-end align-items-md-center",
+};
+
+const SEARCHBAR = {
+  root: {
+    borderRadius: "15px",
+    border: "3px solid #D2BF0E",
+    backgroundColor: "white",
+    color: "#D2BF0E",
+    display: "flex",
+    alignItems: "center",
+  },
+};
+
+const DYNAMICS_SUBCONTAINER = {
+  bootstrap:
+    "col col-md-auto text-right px-0 px-sm-2 px-md-0 d-flex d-sm-block justify-content-between align-items-end",
+};
+
+const PROFILE_SHORCUT = {
+  root: {
+    border: "2px solid white",
+    background:
+      "linear-gradient(90deg, rgba(210, 191, 14, 0.9) 29.69%, rgba(210, 191, 14, 0.553333) 65.1%, rgba(210, 191, 14, 0.1) 100%)",
+  },
+};
+
 const Header = () => {
   const classes = style();
   return (
-    <div
-      style={{
-        background:
-          "linear-gradient(180deg, #FFB800 48.96%, rgba(255, 255, 255, 0) 48.97%), #0DA735",
-        fontFamily: "Karla-Italic",
-      }}
-      className="d-flex align-items-center py-3 px-md-5 px-3 sticky-top border-bottom"
-    >
+    <div style={GENERAL_CONTAINER.root} className={GENERAL_CONTAINER.bootstrap}>
       <Link to="/" className="mt-n2 d-none d-sm-inline">
         <img src="assets/images/logo.png" alt="logo" height="85em" />
       </Link>
-      <div className="col px-0 px-sm-3 px-md-0 d-flex flex-column flex-md-row align-items-center align-items-sm-end align-items-md-center">
+      <div className={DYNAMICS_CONTAINER.bootstrap}>
         <span
           style={{ fontFamily: "Lemonada-Bold", color: "white" }}
           className="col d-sm-none"
         >
           Farm Rhythm
         </span>
-        <form
-          style={{
-            borderRadius: "15px",
-            border: "3px solid #D2BF0E",
-            backgroundColor: "white",
-            color: "#D2BF0E",
-            display: "flex",
-            alignItems: "center",
-          }}
-          className="col my-2 mx-2 mx-lg-5"
-        >
+        <form style={SEARCHBAR.root} className="col my-2 mx-2 mx-lg-5">
           <FontAwesomeIcon icon={faSearch} color="inherit" className="mx-2" />
           <InputBase
             placeholder="search..."
@@ -63,12 +84,13 @@ const Header = () => {
           />
         </form>
 
-        <div className="col col-md-auto text-right px-0 px-sm-2 px-md-0 d-flex d-sm-block justify-content-between align-items-end">
+        <div className={DYNAMICS_SUBCONTAINER.bootstrap}>
           <Link
             to="/"
             className="d-flex d-sm-none mr-3"
             style={{ position: "relative", width: "35px" }}
           >
+            {/* Home link */}
             <img src="assets/images/home.png" alt="home" width="100%" />
           </Link>
 
@@ -78,8 +100,8 @@ const Header = () => {
           >
             {/* Notifications */}
             <img src="assets/images/bell.png" alt="bell" width="100%" />
-            <div hidden className={classes.badge}>
-              <span>8</span>
+            <div className={classes.unreadBadge}>
+              <span>1</span>
             </div>
           </ButtonBase>
 
@@ -93,18 +115,14 @@ const Header = () => {
               alt="messageBox"
               width="100%"
             />
-            <div className={classes.badge}>
+            <div className={classes.unreadBadge}>
               <span>+9</span>
             </div>
           </ButtonBase>
 
           <ButtonBase
             className="ml-3 p-sm-1 rounded-pill text-white"
-            style={{
-              border: "2px solid white",
-              background:
-                "linear-gradient(90deg, rgba(210, 191, 14, 0.9) 29.69%, rgba(210, 191, 14, 0.553333) 65.1%, rgba(210, 191, 14, 0.1) 100%)",
-            }}
+            style={PROFILE_SHORCUT.root}
           >
             {/* profileShortcut */}
             <img

@@ -44,6 +44,11 @@ const style = makeStyles({
   },
 });
 
+const MEDIA_BLOCK = {
+  bootstrap:
+    "py-4 px-0 col col-lg-10 d-flex justify-content-start justify-content-sm-center justify-content-md-start flex-wrap",
+};
+
 const ContactContent = () => {
   const classes = style();
 
@@ -86,14 +91,11 @@ const ContactContent = () => {
               </div>
             </div>
           </div>
-          <div
-            style={{ color: "#FFB800" }}
-            className="py-4 px-0 col col-lg-10 d-flex justify-content-start justify-content-sm-center justify-content-md-start flex-wrap"
-          >
+          <div style={{ color: "#FFB800" }} className={MEDIA_BLOCK.bootstrap}>
             <Button
               color="inherit"
               variant="outlined"
-              className={classes.socialMedia}
+              className={`${classes.socialMedia}`}
             >
               <FontAwesomeIcon icon={faLinkedinIn} size="2x" />
             </Button>
