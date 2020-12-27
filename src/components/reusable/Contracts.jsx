@@ -8,6 +8,8 @@ import DialogContent from "@material-ui/core/DialogContent";
 import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
 
+import { withNamespaces } from "react-i18next";
+
 const BUTTON = {
   root: {
     fontFamily: "karla-Italic",
@@ -33,7 +35,7 @@ const CONTRACTS_DATA = {
   },
 };
 
-const Contracts = () => {
+const Contracts = ({ t }) => {
   const [open, setOpen] = useState(false);
   const [contractType, setContratType] = useState("termsOfUse");
 
@@ -56,20 +58,23 @@ const Contracts = () => {
     }
   }, [open]);
 
-  console.log(CONTRACTS_DATA[contractType].title);
-
   return (
     <>
-      <Button style={BUTTON.root} onClick={() => handleClickOpen("termsOfUse")}>
-        Terms of Use
-      </Button>
-      -
-      <Button
-        style={BUTTON.root}
-        onClick={() => handleClickOpen("privacyPolicy")}
-      >
-        Privacy Policy
-      </Button>
+      <span className="d-flex align-items-center justify-content-center flex-wrap flex-sm-nowrap">
+        <Button
+          style={BUTTON.root}
+          onClick={() => handleClickOpen("termsOfUse")}
+        >
+          {t("common.termOfUse")}
+        </Button>
+        <span className="d-none d-sm-inline">-</span>
+        <Button
+          style={BUTTON.root}
+          onClick={() => handleClickOpen("privacyPolicy")}
+        >
+          {t("common.privacyPolicy")}
+        </Button>
+      </span>
       <ThemeProvider theme={dialogTheme}>
         <Dialog
           open={open}
@@ -111,4 +116,4 @@ Praesent commodo cursus magna, vel scelerisque nisl consectetur et.`
   );
 };
 
-export default Contracts;
+export default withNamespaces()(Contracts);

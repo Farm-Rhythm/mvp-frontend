@@ -1,0 +1,21 @@
+{
+  "common": {
+    "home": "accueil",
+    "contact": "contact",
+    "termOfUse": "Conditions d'utilisation",
+    "privacyPolicy": "Politique de Confidentialité",
+    "search": "rechercher",
+    "language": "Français"
+  },
+
+  "contactPage": {
+    "fullName": "Nom et prénom",
+    "email": "Adresse email",
+    "yourMessage": "Votre message",
+    "send": "envoyer",
+    "formTitle": "Envoyez-nous un message",
+    "mainTitle": "Contactez Nous",
+    "callToActionMessage": "Nous sommes votre écoute, alors dites-nous tout !",
+    "phone": "téléphone"
+  }
+}

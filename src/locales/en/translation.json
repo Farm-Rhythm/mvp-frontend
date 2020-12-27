@@ -1,0 +1,21 @@
+{
+  "common": {
+    "home": "home",
+    "contactUs": "contact",
+    "termOfUse": "Terms of Use",
+    "privacyPolicy": "Privacy Policy",
+    "search": "search",
+    "language": "English"
+  },
+
+  "contactPage": {
+    "fullName": "Full name",
+    "email": "Email address",
+    "yourMessage": "Your message",
+    "send": "send",
+    "formTitle": "Send us a message",
+    "mainTitle": "Contact Us",
+    "callToActionMessage": "Ask us anything and we’d love to hear from you",
+    "phone": "phone"
+  }
+}

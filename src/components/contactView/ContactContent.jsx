@@ -3,6 +3,9 @@ import { Button } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import { Email, Phone } from "@material-ui/icons";
 
+import { withNamespaces } from "react-i18next";
+
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFacebookF,
@@ -49,7 +52,7 @@ const MEDIA_BLOCK = {
     "py-4 px-0 col col-lg-10 d-flex justify-content-start justify-content-sm-center justify-content-md-start flex-wrap",
 };
 
-const ContactContent = () => {
+const ContactContent = ({ t }) => {
   const classes = style();
 
   return (
@@ -57,9 +60,9 @@ const ContactContent = () => {
       <div className="header px-2 px-lg-5 py-5 col-12 d-flex justify-content-around align-items-center">
         <div className={classes.treeDecoration}></div>
         <div className="text-center">
-          <div className="title h2">Contact Us</div>
+          <div className="title h2">{t("contactPage.mainTitle")}</div>
           <div className="subtitle text-secondary">
-            Ask us anything and we’d love to hear from you
+            {t("contactPage.callToActionMessage")}
           </div>
         </div>
         <div className={classes.treeDecoration}></div>
@@ -78,13 +81,15 @@ const ContactContent = () => {
             />
             <div className="text-dark flex-wrap-reverse d-flex col">
               <div className="m-3">
-                <div className="h5 font-weight-bold">ONLINE SERVICE</div>
+                <div className="h5 font-weight-bold text-uppercase">e-mail</div>
                 <div className="small mt-3">
                   <Email color="inherit" /> farmrhythm@gmail.com
                 </div>
               </div>
               <div className="m-3">
-                <div className="h5 font-weight-bold">PHONE</div>
+                <div className="h5 font-weight-bold text-uppercase">
+                  {t("contactPage.phone")}
+                </div>
                 <div className="small mt-3">
                   <Phone color="inherit" /> +XXXXXXXXXX
                 </div>
@@ -127,4 +132,4 @@ const ContactContent = () => {
   );
 };
 
-export default ContactContent;
+export default withNamespaces()(ContactContent);

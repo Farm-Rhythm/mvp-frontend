@@ -6,6 +6,8 @@ import { makeStyles } from "@material-ui/core/styles";
 import { Container, Link } from "@material-ui/core";
 import Contracts from "./Contracts";
 
+import { withNamespaces } from "react-i18next";
+
 
 const style = makeStyles({
   spanCopyright: {
@@ -37,7 +39,7 @@ const DYNAMICS_SUBCONTAINER = {
     "d-flex flex-wrap-reverse justify-content-center align-items-center offset-md-1 col p-0",
 };
 
-const Footer = () => {
+const Footer = ({t}) => {
   const classes = style();
 
   return (
@@ -54,21 +56,21 @@ const Footer = () => {
           </span>
           <span className="px-3 py-3">
             <Link
-              className="text-reset"
+              className="text-reset text-capitalize"
               underline="always"
               component={RouterLink}
               to="/"
             >
-              Home
+              {t('common.home')}
             </Link>
             &nbsp; &nbsp; &nbsp;
             <Link
-              className="text-reset"
+              className="text-reset text-capitalize"
               underline="always"
               component={RouterLink}
               to="/contact"
             >
-              Contact-us
+              {t('common.contact')}
             </Link>
           </span>
         </span>
@@ -80,4 +82,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default withNamespaces()(Footer);

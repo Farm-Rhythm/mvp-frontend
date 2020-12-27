@@ -5,6 +5,9 @@ import { makeStyles } from "@material-ui/core/styles";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch, faCaretDown } from "@fortawesome/free-solid-svg-icons";
 
+import { withNamespaces } from "react-i18next";
+
+
 const style = makeStyles({
   unreadBadge: {
     color: "#D2BF0E",
@@ -61,7 +64,7 @@ const PROFILE_SHORCUT = {
   },
 };
 
-const Header = () => {
+const Header = ({t}) => {
   const classes = style();
   return (
     <div style={GENERAL_CONTAINER.root} className={GENERAL_CONTAINER.bootstrap}>
@@ -78,7 +81,7 @@ const Header = () => {
         <form style={SEARCHBAR.root} className="col my-2 mx-2 mx-lg-5">
           <FontAwesomeIcon icon={faSearch} color="inherit" className="mx-2" />
           <InputBase
-            placeholder="search..."
+            placeholder={`${t('common.search')}...`}
             fullWidth
             style={{ color: "#D2BF0E" }}
           />
@@ -144,4 +147,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default withNamespaces()(Header);

@@ -2,6 +2,9 @@ import { TextField, Button } from "@material-ui/core";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import { Send } from "@material-ui/icons";
 
+import { withNamespaces } from "react-i18next";
+
+
 const theme = createMuiTheme({
   palette: {
     primary: {
@@ -15,15 +18,15 @@ const theme = createMuiTheme({
 
 
 
-const ContactForm = () => {
+const ContactForm = ({ t }) => {
   return (
     <ThemeProvider theme={theme}>
       <form className="py-4">
         <div className="h4 mb-4 font-weight-bold text-center text-dark">
-          Send us a message
+          {t('contactPage.formTitle')}
         </div>
         <TextField
-          label="Full name"
+          label={`${t("contactPage.fullName")}`}
           required
           variant="outlined"
           fullWidth
@@ -31,7 +34,7 @@ const ContactForm = () => {
           className="my-2 my-md-3"
         />
         <TextField
-          label="Email address"
+          label={`${t("contactPage.email")}`}
           required
           variant="outlined"
           fullWidth
@@ -40,7 +43,7 @@ const ContactForm = () => {
           className="my-2 my-md-3"
         />
         <TextField
-          label="Your message"
+          label={`${t("contactPage.yourMessage")}`}
           required
           variant="outlined"
           fullWidth
@@ -57,11 +60,11 @@ const ContactForm = () => {
           className="mt-3 text-white text-capitalize font-weight-bold"
           endIcon={<Send />}
         >
-          Send
+          {t('contactPage.send')}
         </Button>
       </form>
     </ThemeProvider>
   );
 };
 
-export default ContactForm;
+export default withNamespaces()(ContactForm);
