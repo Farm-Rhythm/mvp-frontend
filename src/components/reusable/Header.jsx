@@ -3,9 +3,10 @@ import { Link } from "react-router-dom";
 import { ButtonBase, InputBase } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch, faCaretDown } from "@fortawesome/free-solid-svg-icons";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
 import { withNamespaces } from "react-i18next";
+import ProfileShortcut from "./ProfileShortcut";
 
 
 const style = makeStyles({
@@ -30,7 +31,7 @@ const GENERAL_CONTAINER = {
   root: {
     background:
       "linear-gradient(180deg, #FFB800 48.96%, rgba(255, 255, 255, 0) 48.97%), #0DA735",
-    fontFamily: "Karla-Italic",
+    fontFamily: "Karla-Italic"
   },
   bootstrap: "d-flex align-items-center py-3 px-md-5 px-3 sticky-top border-bottom"
 };
@@ -56,13 +57,6 @@ const DYNAMICS_SUBCONTAINER = {
     "col col-md-auto text-right px-0 px-sm-2 px-md-0 d-flex d-sm-block justify-content-between align-items-end",
 };
 
-const PROFILE_SHORCUT = {
-  root: {
-    border: "2px solid white",
-    background:
-      "linear-gradient(90deg, rgba(210, 191, 14, 0.9) 29.69%, rgba(210, 191, 14, 0.553333) 65.1%, rgba(210, 191, 14, 0.1) 100%)",
-  },
-};
 
 const Header = ({t}) => {
   const classes = style();
@@ -81,7 +75,7 @@ const Header = ({t}) => {
         <form style={SEARCHBAR.root} className="col my-2 mx-2 mx-lg-5">
           <FontAwesomeIcon icon={faSearch} color="inherit" className="mx-2" />
           <InputBase
-            placeholder={`${t('common.search')}...`}
+            placeholder={`${t("common.search")}...`}
             fullWidth
             style={{ color: "#D2BF0E" }}
           />
@@ -123,24 +117,8 @@ const Header = ({t}) => {
             </div>
           </ButtonBase>
 
-          <ButtonBase
-            className="ml-3 p-sm-1 rounded-pill text-white"
-            style={PROFILE_SHORCUT.root}
-          >
-            {/* profileShortcut */}
-            <img
-              src="assets/images/defaultProfilePic.png"
-              alt="defaultProfilePic"
-              className="rounded-circle mx-2"
-              width="35px"
-              style={{ border: "2px solid white" }}
-            />
-            <FontAwesomeIcon
-              icon={faCaretDown}
-              size="2x"
-              className="mx-2 d-none d-sm-inline"
-            />
-          </ButtonBase>
+          <ProfileShortcut />
+          
         </div>
       </div>
     </div>

@@ -5,7 +5,9 @@
     "termOfUse": "Terms of Use",
     "privacyPolicy": "Privacy Policy",
     "search": "search",
-    "language": "English"
+    "language": "English",
+    "farmer": "farmer",
+    "logOut": "Log Out"
   },
 
   "contactPage": {

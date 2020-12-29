@@ -5,7 +5,9 @@
     "termOfUse": "Conditions d'utilisation",
     "privacyPolicy": "Politique de Confidentialité",
     "search": "rechercher",
-    "language": "Français"
+    "language": "Français",
+    "farmer": "Agriculteur",
+    "logOut": "Se déconnecter"
   },
 
   "contactPage": {
