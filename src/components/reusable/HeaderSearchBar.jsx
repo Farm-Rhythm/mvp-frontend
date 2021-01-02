@@ -24,23 +24,25 @@ const SEARCH = {
   },
 };
 
-const HeaderSearchBar = ({ t, searchPageLayout }) => {
+const HeaderSearchBar = ({ t, onSearchPageLocationSmall }) => {
+
   return (
     <>
-      <form
-        style={SEARCH.bar}
-        className="col my-2 mx-2 mx-lg-5 d-none d-sm-flex"
-        hidden={searchPageLayout}
-      >
+      <form style={SEARCH.bar} className="col my-sm-2 mx-2 mx-lg-5" hidden={!onSearchPageLocationSmall}>
         <FontAwesomeIcon icon={faSearch} color="inherit" className="mx-2" />
         <InputBase
           placeholder={`${t("common.search")}...`}
           fullWidth
-          style={{ color: "#D2BF0E" }}
+          style={{ color: "#D2BF0E", fontFamily: 'Karla-Italic' }}
         />
       </form>
 
-      <Link to="/search" component={RouterLink} className="d-inline d-sm-none">
+      
+      <Link
+        to="/search"
+        component={RouterLink}
+        className={`${onSearchPageLocationSmall ? 'd-none' : 'd-inline'} d-sm-none`}
+      >
         <Avatar style={SEARCH.btn_sm}>
           <FontAwesomeIcon icon={faSearch} color="inherit" size="xs" />
         </Avatar>
@@ -48,5 +50,9 @@ const HeaderSearchBar = ({ t, searchPageLayout }) => {
     </>
   );
 };
+
+HeaderSearchBar.defaultProps = {
+  onSearchPageLocationSmall: true,
+}
 
 export default withNamespaces()(HeaderSearchBar);

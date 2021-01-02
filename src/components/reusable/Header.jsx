@@ -8,7 +8,7 @@ const Header = ({ searchPage }) => {
         <HeaderGreat />
       </div>
       <div className="d-sm-none">
-        <HeaderSmall searchPageLayout={searchPage} />
+        <HeaderSmall />
       </div>
     </div>
   );

@@ -69,7 +69,7 @@ const ProfileShortcut = ({ t }) => {
           style={{ fontFamily: "Karla-Italic" }}
           className="border-bottom"
           component={RouterLink}
-          to="/profile/armandine"
+          to="/profile"
         >
           <FontAwesomeIcon icon={faUserCircle} size="lg" />
           <span className="d-flex flex-column ml-3">
@@ -96,7 +96,7 @@ const ProfileShortcut = ({ t }) => {
         className="rounded-pill text-white d-inline-block d-sm-none"
         style={GENERAL_CONTAINER.root}
         component={RouterLink}
-        to="/profile/armandine"
+        to="/profile"
       >
         <img
           src="assets/images/defaultProfilePic.png"

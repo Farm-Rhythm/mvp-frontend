@@ -1,5 +1,11 @@
+import Header from "../components/reusable/Header";
+
 const Profile = () => {
-  return <h1>Armandine</h1>;
+  return (
+    <>
+      <Header /> <div>Profile Page</div>
+    </>
+  );
 };
 
 export default Profile;

@@ -13,7 +13,7 @@ const App = () => {
   return (
     <div>
       <Switch>
-        <Route path='/profile/armandine' component={Profile} />
+        <Route path='/profile' component={Profile} />
         <Route path='/search' component={Search} />
         <Route path="/contact" component={Contact} />
         <Route path="/" component={Home} />

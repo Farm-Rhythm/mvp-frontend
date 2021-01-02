@@ -12,10 +12,13 @@ const GENERAL_CONTAINER = {
 };
 
 const DYNAMICS_SUBCONTAINER = {
-  bootstrap: "col p-3 d-flex justify-content-between align-items-center",
+  bootstrap: "col py-2 px-3 d-flex justify-content-between align-items-center",
 };
 
 const HeaderSmall = () => {
+
+  const onSearchPageLocation = window.location.pathname === "/search";
+
   return (
     <div style={GENERAL_CONTAINER.root}>
       <div className="d-flex flex-column align-items-center">
@@ -23,11 +26,12 @@ const HeaderSmall = () => {
           <span
             style={{ fontFamily: "Lemonada-Bold", color: "white" }}
             className="mx-3"
+            hidden={onSearchPageLocation}
           >
             Farm Rhythm
           </span>
 
-          <HeaderSearchBar />
+          <HeaderSearchBar onSearchPageLocationSmall={onSearchPageLocation} />
         </div>
 
         <div
