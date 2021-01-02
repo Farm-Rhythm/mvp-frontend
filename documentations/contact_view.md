@@ -16,6 +16,8 @@
     - [Notes of 19/12/2020:](#notes-of-19122020)
     - [Issues:](#issues)
   - [Notification:](#notification)
+    - [Types of notifications](#types-of-notifications)
+  - [Messaging](#messaging)
   - [**Time spent on the view :**](#time-spent-on-the-view-)
 
 # Resume
@@ -119,6 +121,29 @@ So the preferences to be checked must be classified by type of notification to b
 
 ***NB:** At the frontend level, we will also have notification templates varying according to the type of notification.*
 
+### Types of notifications
+1. "followNewPost": **@user** published a news *(progress of his farm, video, article or photos)*
+2. "followCommentedInterestingPost": **@user(s)** commented on a post you liked
+3. "followNewFarm": **@user** started a new farm **@Farm X** ~  
+4. "sharedMyPost": **@user(s)** shared your *post*
+5. "likedMyActivity": **@user(s)** like your *(post, comment)*
+6. "commentedMyActivity": **@user(s)** commented your *(post, comment)*
+
+7. "respondedMe": **@user** responded to your comment
+8. "identifiedMe": **@user** identified you in a *(post, comment)* ~
+9. "newFollower": **@user** started following you
+10. "newFarmFollower": **@user** is tracking the progress of your farm **@Farm X**
+11. "sharedMyFarm": **@user** shared the progress of your farm
+12. "starCounter": Your farm **@Farm Y** has reached **n stars**
+
+13. "trackFarmInvitation": **@user** invite you to track progress of the farm **@Farm X**
+
+14. "trackedFarmProgress": The Farm **@Farm Y** you are tracking has made further progress
+15. "trackedFarmEndedCycle": The Farm **@Farm Y** you are tracking has completed its production cycle
+
+
+## Messaging
+The term message appears during a private conversation between 2 users. In our solution we offer the possibility of starting the discussion under a topic. The conversation is of type *default* if it is open (without specific subject), the conversation is of type *Farm* if it is initiated under the subject of a particular farm. A differentiation of the visual exists between the 2 types of conversation.
 
 ## **Time spent on the view :**
 - Complete and responsive Visual : **7days** (15 - 22 dec 2020)

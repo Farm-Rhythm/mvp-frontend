@@ -43,8 +43,7 @@ const ProfileShortcut = ({ t }) => {
           src="assets/images/defaultProfilePic.png"
           alt="defaultProfilePic"
           className="rounded-circle mx-2"
-          width="35px"
-          style={{ border: "2px solid white" }}
+          style={{ border: "2px solid white", width: "2.25em" }}
         />
         <FontAwesomeIcon icon={faCaretDown} size="2x" className="mx-2" />
       </ButtonBase>
@@ -54,7 +53,7 @@ const ProfileShortcut = ({ t }) => {
         anchorEl={anchorEl}
         keepMounted
         getContentAnchorEl={null}
-        style={{ maxWidth: "280px" }}
+        style={{ maxHeight: "600px" }}
         open={Boolean(anchorEl)}
         onClose={() => setAnchorEl(null)}
         anchorOrigin={{
@@ -82,7 +81,7 @@ const ProfileShortcut = ({ t }) => {
         </MenuItem>
 
         <MenuItem
-          style={{ fontFamily: "Karla-Italic" }}
+          style={{ fontFamily: "Karla-Italic", maxWidth: "280px" }}
           className="text-danger"
         >
           <FontAwesomeIcon icon={faPowerOff} size="lg" />
@@ -103,8 +102,7 @@ const ProfileShortcut = ({ t }) => {
           src="assets/images/defaultProfilePic.png"
           alt="defaultProfilePic"
           className="rounded-circle mx-2"
-          width="35px"
-          style={{ border: "2px solid white" }}
+          style={{ border: "2px solid white", width: "2.2em" }}
         />
       </Link>
     </span>
