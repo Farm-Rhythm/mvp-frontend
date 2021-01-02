@@ -1,7 +1,7 @@
 import { withNamespaces } from "react-i18next";
 import {
-  MenuItem,
   Avatar,
+  MenuItem,
   ListItem,
   ListItemText,
   ListItemAvatar,
@@ -13,16 +13,16 @@ const activityCategory = ["post", "comment"];
 
 const useStyle = makeStyles({
   notif: {
-    maxWidth: "300px",
+    maxWidth: styleProps => styleProps.noMaxWidth ? 'auto' : "350px",
     whiteSpace: "normal",
     fontFamily: "Karla-Italic",
     fontSize: "small",
-    backgroundColor: (unread) =>
-      unread ? "rgba(196, 196, 196, 0.2)" : "white",
+    backgroundColor: styleProps =>
+      styleProps.unread ? "rgba(196, 196, 196, 0.2)" : "white",
   },
 });
 
-const NotifsTemplates = ({ t, type, data, unread }) => {
+const NotifsTemplates = ({ t, type, data, unread, noMaxWidth }) => {
   const templates = {
     followNewPost: (data) => (
       <ListItem>
@@ -70,9 +70,13 @@ const NotifsTemplates = ({ t, type, data, unread }) => {
       `The Farm ${data.farmName} you are tracking has completed its production cycle`,
   };
 
-  const classes = useStyle(unread);
+  const styleProps = { unread, noMaxWidth };
+  //console.log(styleProps);
+  const classes = useStyle(styleProps);
   return (
-    <MenuItem className={`${classes.notif} border-top p-0`}>
+    <MenuItem
+      className={`${classes.notif} border-top p-0 text-reset text-decoration-none`}
+    >
       {templates[type](data)}
     </MenuItem>
   );

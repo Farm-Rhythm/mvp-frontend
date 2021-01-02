@@ -7,7 +7,8 @@
     "search": "rechercher",
     "language": "Français",
     "farmer": "Agriculteur",
-    "logOut": "Se déconnecter"
+    "logOut": "Se déconnecter",
+    "markAsRead": "Tout marquer comme lu"
   },
 
   "contactPage": {
