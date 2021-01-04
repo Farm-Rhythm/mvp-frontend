@@ -8,7 +8,8 @@
     "language": "Français",
     "farmer": "Agriculteur",
     "logOut": "Se déconnecter",
-    "markAsRead": "Tout marquer comme lu"
+    "markAsRead": "Tout marquer comme lu",
+    "farm": "projet agricole"
   },
 
   "contactPage": {
@@ -20,5 +21,30 @@
     "mainTitle": "Contactez Nous",
     "callToActionMessage": "Nous sommes votre écoute, alors dites-nous tout !",
     "phone": "téléphone"
-  }
+  },
+
+  "published a new": "a publié",
+  "farm progression": "une nouvelle progression du projet agricole",
+  "video": "une nouvelle vidéo",
+  "photo": "une nouvelle photo",
+  "article": "un nouvel article",
+  "post": "publication",
+  "comment": "commentaire",
+  "commented on a post that may interest you": "a commenté un post qui pourrait vous intéresser",
+  "started a new farm": "a commencé le nouveau $t(common.farm)",
+  "shared your post": "a partagé votre publication",
+  "liked your": "a aimé votre",
+  "commented your post": "a commenté votre $t(post)",
+  "responded to your comment": "a répondu à votre $t(comment)",
+  "identified you in a post": "vous a identifié dans une $t(post)",
+  "identified you in a comment": "vous a identifié dans un $t(comment)",
+  "started following you": "a commencé à vous suivre",
+  "started tracking the progress of your farm": "a commencé à suivre la progression de votre $t(common.farm)",
+  "shared the progress of your farm": "a partagé la progression de votre $t(common.farm)",
+  "numberOfStar": ["Votre $t(common.farm)", "a atteint", "étoiles"],
+  "in a post": "dans une $t(post)",
+  "invite you to track progress of the farm": "vous invite à suivre les progrès du $t(common.farm)",
+  "the farm": "The $t(common.farm)",
+  "you are tracking has made further progress": "que vous suivez a fait de nouveaux progrès",
+  "you are tracking has completed its production cycle": "vous suivez a terminé son cycle de production"
 }

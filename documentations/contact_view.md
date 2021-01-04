@@ -15,6 +15,7 @@
     - [Method to use for formatting views:](#method-to-use-for-formatting-views)
     - [Notes of 19/12/2020:](#notes-of-19122020)
     - [Issues:](#issues)
+    - [Improvements:](#improvements)
   - [Notification:](#notification)
     - [Types of notifications](#types-of-notifications)
   - [Messaging](#messaging)
@@ -111,7 +112,10 @@ This component contains the **LanguageSwitch** component, some links to others p
 
 
 ### Issues:
-- nothing to report
+- The notification page is accessible by URL even if we are on a web view
+
+### Improvements:
+- Grouped variant of notification types (taking into account the plural in the translation)
 
 ## Notification: 
 During data processing at the backend level, notifications are designed and assigned to users.
@@ -123,17 +127,20 @@ So the preferences to be checked must be classified by type of notification to b
 
 ### Types of notifications
 1. "followNewPost": **@user** published a news *(progress of his farm, video, article or photos)*
-2. "followCommentedInterestingPost": **@user(s)** commented on a post you liked
+2. "followCommentedInterestingPost": **@user(s)** commented on a post that may interest you <!--commented on a post you liked-->
 3. "followNewFarm": **@user** started a new farm **@Farm X** ~  
+
 4. "sharedMyPost": **@user(s)** shared your *post*
-5. "likedMyActivity": **@user(s)** like your *(post, comment)*
-6. "commentedMyActivity": **@user(s)** commented your *(post, comment)*
+5. "commentedMyPost": **@user(s)** commented your *post*
+
+6. "likedMyActivity": **@user(s)** like your *(post, comment)*
 
 7. "respondedMe": **@user** responded to your comment
 8. "identifiedMe": **@user** identified you in a *(post, comment)* ~
-9. "newFollower": **@user** started following you
+9.  "newFollower": **@user** started following you
 10. "newFarmFollower": **@user** is tracking the progress of your farm **@Farm X**
 11. "sharedMyFarm": **@user** shared the progress of your farm
+
 12. "starCounter": Your farm **@Farm Y** has reached **n stars**
 
 13. "trackFarmInvitation": **@user** invite you to track progress of the farm **@Farm X**

@@ -8,7 +8,8 @@
     "language": "English",
     "farmer": "farmer",
     "logOut": "Log Out",
-    "markAsRead": "Mark all as read"
+    "markAsRead": "Mark all as read",
+    "farm": "farm"
   },
 
   "contactPage": {
@@ -20,5 +21,30 @@
     "mainTitle": "Contact Us",
     "callToActionMessage": "Ask us anything and we’d love to hear from you",
     "phone": "phone"
-  }
+  },
+
+  "published a new": "published a new",
+  "farm progression": "farm progression",
+  "video": "video",
+  "photo": "photo",
+  "article": "article",
+  "post": "post",
+  "comment": "comment",
+  "commented on a post that may interest you": "commented on a post that may interest you",
+  "started a new farm": "started the new $t(common.farm)",
+  "shared your post": "shared your post",
+  "liked your": "liked your",
+  "commented your post": "commented your $t(post)",
+  "responded to your comment": "responded to your comment",
+  "identified you in a post": "identified you in a post",
+  "identified you in a comment": "identified you in a comment",
+  "started following you": "started following you",
+  "started tracking the progress of your farm": "started tracking the progress of your $t(common.farm)",
+  "shared the progress of your farm": "shared the progress of your $t(common.farm)",
+  "numberOfStar": ["Your $t(common.farm)", "has reached", "stars"],
+  "in a post": "in a $t(post)",
+  "invite you to track progress of the farm": "invite you to track progress of the $t(common.farm)",
+  "the farm": "The $t(farm)",
+  "you are tracking has made further progress": "you are tracking has made further progress",
+  "you are tracking has completed its production cycle": "you are tracking has completed its production cycle"
 }

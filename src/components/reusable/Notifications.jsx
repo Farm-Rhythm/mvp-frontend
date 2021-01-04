@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link as RouterLink } from "react-router-dom";
 
 import { ButtonBase, Menu, Link } from "@material-ui/core";
@@ -31,24 +31,161 @@ const notifs = [
     type: "followNewPost",
     unread: true,
     data: {
-      followName: "user Top",
-      postCategory: 0,
+      followUser: {
+        name: "user Top",
+        imgUrl: "assets/images/defaultProfilePic.png",
+      },
+      postCategoryInd: 0,
+      accessLink: "",
     },
   },
   {
-    type: "followNewPost",
+    type: "followCommentedInterestingPost",
     unread: false,
     data: {
-      followName: "user Top",
-      postCategory: 0,
+      followUser: {
+        name: "user Top",
+        imgUrl: "assets/images/defaultProfilePic.png",
+      },
+      accessLink: "",
     },
   },
   {
-    type: "followNewPost",
+    type: "followNewFarm",
+    unread: true,
+    data: {
+      followUser: {
+        name: "user Top",
+        imgUrl: "assets/images/defaultProfilePic.png",
+        newFarmName: "Farm new 2",
+      },
+      accessLink: "",
+    },
+  },
+  {
+    type: "sharedMyPost",
+    unread: true,
+    data: {
+      user: {
+        name: "user Top",
+        imgUrl: "assets/images/defaultProfilePic.png",
+      },
+      accessLink: "",
+    },
+  },
+  {
+    type: "commentedMyPost",
+    unread: true,
+    data: {
+      user: {
+        name: "user Top",
+        imgUrl: "assets/images/defaultProfilePic.png",
+      },
+      accessLink: "",
+    },
+  },
+  {
+    type: "likedMyActivity",
+    unread: true,
+    data: {
+      user: {
+        name: "user Top",
+        imgUrl: "assets/images/defaultProfilePic.png",
+      },
+      activityCategoryInd: 1,
+      accessLink: "",
+    },
+  },
+  {
+    type: "respondedMe",
+    unread: true,
+    data: {
+      user: {
+        name: "user Top",
+        imgUrl: "assets/images/defaultProfilePic.png",
+      },
+      accessLink: "",
+    },
+  },
+  {
+    type: "identifiedMe",
+    unread: true,
+    data: {
+      user: {
+        name: "user Top",
+        imgUrl: "assets/images/defaultProfilePic.png",
+      },
+      activityCategoryInd: 1,
+      accessLink: "",
+    },
+  },
+  {
+    type: "newFollower",
     unread: false,
     data: {
-      followName: "user Top",
-      postCategory: 0,
+      user: {
+        name: "user Top",
+        imgUrl: "assets/images/defaultProfilePic.png",
+      },
+    },
+  },
+  {
+    type: "newFarmFollower",
+    unread: false,
+    data: {
+      user: {
+        name: "user Top",
+        imgUrl: "assets/images/defaultProfilePic.png",
+      },
+      farmName: "Farm Num 8",
+    },
+  },
+  {
+    type: "sharedMyFarm",
+    unread: true,
+    data: {
+      user: {
+        name: "user Top",
+        imgUrl: "assets/images/defaultProfilePic.png",
+      },
+      farmName: "Farm Num 8",
+      accessLink: "",
+    },
+  },
+  {
+    type: "starCounter",
+    unread: false,
+    data: {
+      farmName: "Farm Num 8",
+      numberStar: 23,
+    },
+  },
+  {
+    type: "trackFarmInvitation",
+    unread: true,
+    data: {
+      user: {
+        name: "user Top",
+        imgUrl: "assets/images/defaultProfilePic.png",
+      },
+      farmName: "Farm Num 34",
+      accessLink: "",
+    },
+  },
+  {
+    type: "trackedFarmProgress",
+    unread: true,
+    data: {
+      farmName: "Farm Num 34",
+      accessLink: "",
+    },
+  },
+  {
+    type: "trackedFarmEndedCycle",
+    unread: true,
+    data: {
+      farmName: "Farm Num 33",
+      accessLink: "",
     },
   },
 ];
@@ -58,6 +195,14 @@ const unreadNotifCount = notifs.filter(({ unread }) => unread).length;
 const Notifications = ({ t }) => {
   const classes = style();
   const [anchorEl, setAnchorEl] = useState(null);
+
+  useEffect(() => {
+    window.onresize = () => {
+      if (window.innerWidth < 576.98) {
+        setAnchorEl(null);
+      }
+    };
+  });
 
   return (
     <span>
@@ -106,10 +251,12 @@ const Notifications = ({ t }) => {
         }}
       >
         <div>
-          <div className="d-flex justify-content-between">
-            <p className="m-3 h3 font-weight-bold">Notifications</p>
+          <div className="d-flex align-items-center justify-content-between border-bottom">
+            <p className="m-3 h4 font-weight-bold">Notifications</p>
             <ButtonBase
-              className="m-3 px-2 text-primary rounded-lg border border-primary small"
+              className="mx-3 p-0 text-primary d-inline"
+              style={{ fontSize: "10px", height: "15px" }}
+              component="div"
               hidden={unreadNotifCount === 0}
             >
               {t("common.markAsRead")}
