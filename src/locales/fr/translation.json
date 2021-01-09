@@ -46,5 +46,6 @@
   "invite you to track progress of the farm": "vous invite à suivre les progrès du $t(common.farm)",
   "the farm": "The $t(common.farm)",
   "you are tracking has made further progress": "que vous suivez a fait de nouveaux progrès",
-  "you are tracking has completed its production cycle": "vous suivez a terminé son cycle de production"
+  "you are tracking has completed its production cycle": "vous suivez a terminé son cycle de production",
+  "see all": "Voir tout"
 }

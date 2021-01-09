@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link as RouterLink } from "react-router-dom";
 
-import { ButtonBase, Menu, Link } from "@material-ui/core";
+import { ButtonBase, Menu, MenuItem, Link } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 
 import NotifsTemplates from "./NotifsTemplates";
@@ -23,6 +23,19 @@ const style = makeStyles({
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
+  },
+  // "justify-content-center font-weight-bold col-5 mt-2 mx-auto rounded-pill"
+  link: {
+    fontFamily: "Karla-Regular",
+    fontSize: "small",
+    justifyContent: "center",
+    fontWeight: "bold",
+    borderRadius: "15px",
+    width: "40%",
+    margin: "0.8em auto 0px",
+    "&:hover": {
+      textDecoration: "underline",
+    },
   },
 });
 
@@ -272,6 +285,13 @@ const Notifications = ({ t }) => {
                   data={data}
                 />
               ))}
+          <MenuItem
+            className={classes.link}
+            component={RouterLink}
+            to="/notification"
+          >
+            {t("see all")}
+          </MenuItem>
         </div>
       </Menu>
     </span>

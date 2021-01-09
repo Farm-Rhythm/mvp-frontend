@@ -3,7 +3,7 @@ import NotifsTemplates from "../components/reusable/NotifsTemplates";
 
 import { withNamespaces } from "react-i18next";
 
-import { useEffect } from "react";
+// import { useEffect } from "react";
 
 import { ButtonBase } from "@material-ui/core";
 
@@ -173,14 +173,14 @@ const notifs = [
 
 const unreadNotifCount = notifs.filter(({ unread }) => unread).length;
 
-const NotificationSmall = ({ history, t }) => {
-  useEffect(() => {
-    window.onresize = () => {
-      if (window.innerWidth > 575.98) {
-        history.goBack();
-      }
-    };
-  });
+const NotificationSmall = ({ t }) => {
+  // useEffect(() => {
+  //   window.onresize = () => {
+  //     if (window.innerWidth > 575.98) {
+  //       history.goBack();
+  //     }
+  //   };
+  // });
 
   return (
     <>
