@@ -2,7 +2,7 @@
 
 - [Resume](#resume)
 - [Prepare the programming work](#prepare-the-programming-work)
-  - [Full design of the view **_(In progress => 90%)_**](#full-design-of-the-view-in-progress--90)
+  - [Full design of the view **_(completed)_**](#full-design-of-the-view-completed)
   - [Which data models to use?](#which-data-models-to-use)
   - [What focal information?](#what-focal-information)
   - [Efficient view splitting](#efficient-view-splitting)
@@ -20,6 +20,7 @@
     - [Types of notifications](#types-of-notifications)
   - [Messaging](#messaging)
   - [**Time spent on the view :**](#time-spent-on-the-view-)
+  - [**Conclusion Visual implementation ended :**](#conclusion-visual-implementation-ended-)
 
 # Resume
 
@@ -31,9 +32,7 @@ Here is the view design :
 
 # Prepare the programming work
 
-## Full design of the view **_(In progress => 90%)_**
-
-**Remaining:** _Notifications behaviors, ProfileShorcuts behaviors, ChatBox interface_
+## Full design of the view **_(completed)_**
 
 ## Which data models to use?
 
@@ -60,27 +59,33 @@ Identify all the information variables that require a call to the server.
 
         notifications: [{ data: Object, type: String, unread: Boolean }],
 
-        chats: [{
-          intelocutors: [User],
-          messages: [{ author: User._id, contentText: String, time: Date, topic: Farm }]
-        }]
+        chats: { unReadConversations: Number }
     }
 ```
+
+<!-- chats: {
+          conversations: [{
+            intelocutors: [User],
+            messages: [{ author: User._id, contentText: String, time: Date, topic: Farm }],
+            unReadMessages: Number
+          }],
+        unReadConversations: Number
+        } -->
 
 ## Efficient view splitting
 
 Split the view into specific and generic component.
 
 - Header
-  - SearchBar _(more splitting needed)_
-  - Notifications _(more splitting needed)_
-  - ChatIndicator
+  - SearchBar
+  - Notifications
+  - ChatLink
   - ProfileShortcut
 - ContactContent
   - ContactForm
 - Footer
   - LanguageSwitch
-- ChatBox _(more splitting needed)_
+
 
 ## Describe the business logic
 
@@ -90,7 +95,7 @@ Identify the actions of the business logic implemented by each specific and gene
 
 This component should:
 
-- automatically fill in the existing information of the user (username, email)
+- automatically fill in the existing information of the user (username, email) = *Populate the form*
 - create a new resource **User.contactForm** in the DB
 
 ### **ContactContent**
@@ -107,7 +112,7 @@ This component contains the **LanguageSwitch** component, some links to others p
 
 - Links to :
   - Home (url: '/')
-  - Contact-us (url: '/contact')
+  - Contact (url: '/contact')
 - Modal content :
   - Term of use
   - Privacy Policy
@@ -117,6 +122,7 @@ This component contains the **LanguageSwitch** component, some links to others p
 ### Method to use for formatting views:
 
 - **@material UI Core and Icon** will provide components. These components encapsulate the desired dynamics
+- Icons will be mostly provided by **Font Awesome Icon**
 - **Bootstrap classes** will be used for shaping and embellishment
 
 ### Notes of 19/12/2020:
@@ -126,11 +132,12 @@ This component contains the **LanguageSwitch** component, some links to others p
 
 ### Issues:
 
-- The notification page is accessible by URL even if we are on a web view
+- The header seems too large, it should be reduced by at least 40%
 
 ### Improvements:
 
 - Grouped variant of notification types (taking into account the plural in the translation)
+- The search bar could take into account nice templates displaying last reseach of the user
 
 ## Notification:
 
@@ -139,7 +146,7 @@ Any information has the potential to create a notification. The information is n
 
 So the preferences to be checked must be classified by type of notification to be created. The resulting notification creation system will constitute a business function : **Data processing for Notifications**
 
-**\*NB:** At the frontend level, we will also have notification templates varying according to the type of notification.\*
+***NB:** At the frontend level, we will also have notification templates varying according to the type of notification.*
 
 ### Types of notifications
 
@@ -175,4 +182,8 @@ With this objective, our proposal is a system where creating a conversation will
 
 ## **Time spent on the view :**
 
-- Complete and responsive Visual : **7days** (15 - 22 dec 2020)
+- Complete and responsive Visual : **26days** (15 dec 2020 - 9 jan 2021)
+
+## **Conclusion Visual implementation ended :**
+
+Several reusable and important components have been designed, which has had the effect of increasing the work on this page, which is simple beforehand. The work in the direction of data transmission with the server (backend job & API consumption) will wait until the entire authentication service is finalized, to be implemented
