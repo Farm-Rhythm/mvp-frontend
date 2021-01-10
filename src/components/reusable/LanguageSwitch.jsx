@@ -7,7 +7,7 @@ import i18n from "../../i18n";
 
 import { withNamespaces } from "react-i18next";
 
-const LanguageSwitch = ({ t }) => {
+const LanguageSwitch = ({ t, btnVariant }) => {
   const [anchorEl, setAnchorEl] = useState(null);
 
   function selectLang(lang) {
@@ -25,19 +25,21 @@ const LanguageSwitch = ({ t }) => {
 
   return (
     <>
-      <Button
-        style={{ fontFamily: "karla-Italic", textTransform: "none" }}
-        variant="outlined"
-        color="inherit"
-        startIcon={<Translate />}
-        endIcon={<ArrowDropUp />}
-        className="py-1"
-        onClick={(event) => setAnchorEl(event.currentTarget)}
-        aria-controls="language-selection"
-        aria-haspopup="true"
-      >
-        {t("common.language")}
-      </Button>
+      
+        <Button
+          style={{ fontFamily: "karla-Italic", textTransform: "none" }}
+          variant={btnVariant || "text"}
+          color="inherit"
+          startIcon={<Translate />}
+          endIcon={<ArrowDropUp />}
+          className="py-1"
+          onClick={(event) => setAnchorEl(event.currentTarget)}
+          aria-controls="language-selection"
+          aria-haspopup="true"
+        >
+          {t("common.language")}
+        </Button>
+    
 
       <Menu
         id="language-selection"

@@ -2,10 +2,9 @@ import {
   AppBar,
   Tab,
   Tabs,
-  ButtonBase,
   Button,
   TextField,
-  RadioGroup,
+  FormLabel,
   Radio,
   FormControlLabel,
 } from "@material-ui/core";
@@ -40,42 +39,61 @@ const SignForms = () => {
 
   return (
     <div>
-      <AppBar position="static">
-        <Tabs value={value} onChange={handleChange} aria-label="sign forms">
-          <Tab label="Sign In" {...a11yProps(0)} />
-          <Tab label="Register" {...a11yProps(1)} />
+      <AppBar
+        position="static"
+        color="transparent"
+        className="shadow-none border-bottom d-inline-flex mb-2"
+      >
+        <Tabs
+          value={value}
+          onChange={handleChange}
+          variant='fullWidth'
+          aria-label="sign forms"
+        >
+          <Tab
+            label="Sign In"
+            {...a11yProps(0)}
+            className="text-capitalize font-weight-bold"
+          />
+          <Tab
+            label="Register"
+            {...a11yProps(1)}
+            className="text-capitalize font-weight-bold"
+          />
         </Tabs>
       </AppBar>
 
       <SignForm value={value} index={0}>
         {/* Sign In */}
         <form>
-          <TextField
-            label="email address"
-            required
-            variant="outlined"
-            fullWidth
-            error={false}
-            className="my-2 my-md-3"
-          />
+          <div className="form-group">
+            <TextField
+              label="email address"
+              required
+              variant="outlined"
+              fullWidth
+              size="small"
+            />
+          </div>
 
-          <TextField
-            label="password"
-            required
-            variant="outlined"
-            type="password"
-            fullWidth
-            error={false}
-            className="my-2 my-md-3"
-          />
-          <div className="d-flex justify-content-between">
-            <ButtonBase>Forgot your password</ButtonBase>
+          <div className="form-group">
+            <TextField
+              label="password"
+              required
+              variant="outlined"
+              type="password"
+              fullWidth
+              size="small"
+            />
+          </div>
+          <div className="d-flex">
+            <span className="small text-nowrap mr-3">Forgot your password ?</span>
             <Button
               variant="contained"
               fullWidth
               style={{ backgroundColor: "#0DA735" }}
               type="submit"
-              className="mt-3 text-white text-capitalize font-weight-bold"
+              className="text-white text-capitalize font-weight-bold"
             >
               Sign in
             </Button>
@@ -91,55 +109,61 @@ const SignForms = () => {
               label="first name"
               required
               variant="outlined"
-              fullWidth
-              error={false}
-              className="my-2 my-md-3"
+              size="small"
             />
 
             <TextField
               label="last name"
               required
               variant="outlined"
-              fullWidth
-              error={false}
-              className="my-2 my-md-3"
+              size="small"
             />
           </div>
 
-          <TextField
-            label="mobile number or email"
-            required
-            variant="outlined"
-            fullWidth
-            error={false}
-            className="my-2 my-md-3"
-          />
-
-          <TextField
-            label="password"
-            required
-            type="password"
-            variant="outlined"
-            fullWidth
-            error={false}
-            className="my-2 my-md-3"
-          />
-
-          <RadioGroup aria-label="gender" name="gender" value="female">
-            <FormControlLabel
-              value="female"
-              label="Female"
-              control={<Radio />}
+          <div className="form-group">
+            <TextField
+              label="mobile number or email"
+              required
+              variant="outlined"
+              fullWidth
+              size="small"
             />
-            <FormControlLabel value="male" label="Male" control={<Radio />} />
-          </RadioGroup>
+          </div>
+
+          <div className="form-group">
+            <TextField
+              label="password"
+              required
+              type="password"
+              variant="outlined"
+              fullWidth
+              size="small"
+            />
+          </div>
+
+          <div className="form-group d-flex align-items-center">
+            <FormLabel className="mr-2">Gender :</FormLabel>
+            <div>
+              <FormControlLabel
+                value="female"
+                label="Female"
+                control={<Radio size="small" />}
+              />
+              <FormControlLabel
+                value="male"
+                label="Male"
+                control={<Radio size="small" />}
+              />
+            </div>
+          </div>
 
           <Button
             variant="contained"
+            size="small"
             fullWidth
             style={{ backgroundColor: "#0DA735" }}
             type="submit"
-            className="mt-3 text-white text-capitalize font-weight-bold"
+            className="text-white text-capitalize font-weight-bold"
           >
             Register
           </Button>

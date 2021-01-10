@@ -49,7 +49,7 @@ const Footer = ({t}) => {
       className={GENERAL_CONTAINER.bootstrap}
     >
       <div className={DYNAMICS_CONTAINER.bootstrap}>
-        <LanguageSwitch />
+        <LanguageSwitch btnVariant="outlined" />
         <span className={DYNAMICS_SUBCONTAINER.bootstrap}>
           <span className="px-3">
             <Contracts />
@@ -61,7 +61,7 @@ const Footer = ({t}) => {
               component={RouterLink}
               to="/"
             >
-              {t('common.home')}
+              {t("common.home")}
             </Link>
             &nbsp; &nbsp; &nbsp;
             <Link
@@ -70,7 +70,7 @@ const Footer = ({t}) => {
               component={RouterLink}
               to="/contact"
             >
-              {t('common.contact')}
+              {t("common.contact")}
             </Link>
           </span>
         </span>
