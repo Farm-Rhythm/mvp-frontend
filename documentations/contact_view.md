@@ -138,6 +138,7 @@ This component contains the **LanguageSwitch** component, some links to others p
 
 - Grouped variant of notification types (taking into account the plural in the translation)
 - The search bar could take into account nice templates displaying last reseach of the user
+- We need to improve the concept of accessibility **a11y** of our interfaces
 
 ## Notification:
 
