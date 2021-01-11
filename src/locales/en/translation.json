@@ -8,14 +8,22 @@
     "language": "English",
     "farmer": "farmer",
     "logOut": "Log Out",
+    "signIn": "Sign In",
+    "register": "Register",
+    "password": "password",
     "markAsRead": "Mark all as read",
-    "farm": "farm"
+    "farm": "farm",
+    "Gender": "Gender",
+    "Male": "Male",
+    "Female": "Female",
+    "lastName": "last name",
+    "firstName": "first name"
   },
 
   "contactPage": {
-    "fullName": "Full name",
-    "email": "Email address",
-    "yourMessage": "Your message",
+    "fullName": "full name",
+    "email": "email address",
+    "yourMessage": "your message",
     "send": "send",
     "formTitle": "Send us a message",
     "mainTitle": "Contact Us",
@@ -43,9 +51,17 @@
   "shared the progress of your farm": "shared the progress of your $t(common.farm)",
   "numberOfStar": ["Your $t(common.farm)", "has reached", "stars"],
   "in a post": "in a $t(post)",
-  "invite you to track progress of the farm": "invite you to track progress of the $t(common.farm)",
-  "the farm": "The $t(farm)",
+  "ihe farm": "The $t(farm)",
   "you are tracking has made further progress": "you are tracking has made further progress",
   "you are tracking has completed its production cycle": "you are tracking has completed its production cycle",
-  "see all": "See all"
+  "see all": "See all",
+  "Welcome to the farmers' workspace": "Welcome to the farmers' workspace",
+  "Quick access with": "Quick access with",
+  "contractsSentence": [
+    "By creating an account, you agree to the",
+    "and",
+    "of"
+  ],
+  "Forgot your password": "Forgot your $t(password)",
+  "mobile or email": "$t(contactPage.phone) or $t(contactPage.email)"
 }

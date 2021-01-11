@@ -8,14 +8,22 @@
     "language": "Français",
     "farmer": "Agriculteur",
     "logOut": "Se déconnecter",
+    "signIn": "Se Connecter",
+    "register": "S'Inscrire",
+    "password": "mot de passe",
     "markAsRead": "Tout marquer comme lu",
-    "farm": "projet agricole"
+    "farm": "projet agricole",
+    "Gender": "Genre",
+    "Male": "Homme",
+    "Female": "Femme",
+    "lastName": "nom",
+    "firstName": "prénom"
   },
 
   "contactPage": {
-    "fullName": "Nom et prénom",
-    "email": "Adresse email",
-    "yourMessage": "Votre message",
+    "fullName": "nom et prénom",
+    "email": "adresse email",
+    "yourMessage": "votre message",
     "send": "envoyer",
     "formTitle": "Envoyez-nous un message",
     "mainTitle": "Contactez Nous",
@@ -47,5 +55,10 @@
   "the farm": "The $t(common.farm)",
   "you are tracking has made further progress": "que vous suivez a fait de nouveaux progrès",
   "you are tracking has completed its production cycle": "vous suivez a terminé son cycle de production",
-  "see all": "Voir tout"
+  "see all": "Voir tout",
+  "Welcome to the farmers' workspace": "Bienvenue dans l'espace de travail des agriculteurs",
+  "Quick access with": "Accès rapide avec",
+  "contractsSentence": ["En créant un compte, vous acceptez les", "et la", "de"],
+  "Forgot your password": "Mot de passe oublié",
+  "mobile or email": "$t(contactPage.phone) ou $t(contactPage.email)"
 }

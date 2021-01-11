@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
-import { Button } from "@material-ui/core";
+import { Button, Link } from "@material-ui/core";
 import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import Dialog from "@material-ui/core/Dialog";
 import DialogActions from "@material-ui/core/DialogActions";
@@ -35,7 +35,7 @@ const CONTRACTS_DATA = {
   },
 };
 
-const Contracts = ({ t }) => {
+const Contracts = ({ t, onSentence }) => {
   const [open, setOpen] = useState(false);
   const [contractType, setContratType] = useState("termsOfUse");
 
@@ -60,21 +60,36 @@ const Contracts = ({ t }) => {
 
   return (
     <>
-      <span className="d-flex align-items-center justify-content-center flex-wrap flex-sm-nowrap">
-        <Button
-          style={BUTTON.root}
-          onClick={() => handleClickOpen("termsOfUse")}
-        >
-          {t("common.termOfUse")}
-        </Button>
-        <span className="d-none d-sm-inline">-</span>
-        <Button
-          style={BUTTON.root}
-          onClick={() => handleClickOpen("privacyPolicy")}
-        >
-          {t("common.privacyPolicy")}
-        </Button>
-      </span>
+      {onSentence ? (
+        <span>
+          {t("contractsSentence", { returnObjects: true })[0]}{" "}
+          <Link onClick={() => handleClickOpen("termsOfUse")} role='button'>
+            {t("common.termOfUse")}
+          </Link>{" "}
+          {t("contractsSentence", { returnObjects: true })[1]}{" "}
+          <Link onClick={() => handleClickOpen("privacyPolicy")} role='button'>
+            {t("common.privacyPolicy")}
+          </Link>{" "}
+          {t("contractsSentence", { returnObjects: true })[2]} Farm Rhythm.
+        </span>
+      ) : (
+        <span className="d-flex align-items-center justify-content-center flex-wrap flex-sm-nowrap">
+          <Button
+            style={BUTTON.root}
+            onClick={() => handleClickOpen("termsOfUse")}
+          >
+            {t("common.termOfUse")}
+          </Button>
+          <span className="d-none d-sm-inline">-</span>
+          <Button
+            style={BUTTON.root}
+            onClick={() => handleClickOpen("privacyPolicy")}
+          >
+            {t("common.privacyPolicy")}
+          </Button>
+        </span>
+      )}
+
       <ThemeProvider theme={dialogTheme}>
         <Dialog
           open={open}
@@ -99,9 +114,9 @@ const Contracts = ({ t }) => {
               {[...new Array(50)]
                 .map(
                   () => `Cras mattis consectetur purus sit amet fermentum.
-Cras justo odio, dapibus ac facilisis in, egestas eget quam.
-Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-Praesent commodo cursus magna, vel scelerisque nisl consectetur et.`
+          Cras justo odio, dapibus ac facilisis in, egestas eget quam.
+          Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+          Praesent commodo cursus magna, vel scelerisque nisl consectetur et.`
                 )
                 .join("\n")}
             </DialogContentText>
