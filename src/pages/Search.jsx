@@ -5,7 +5,7 @@ import SearchContent from "../components/searchView/SearchContent";
 const Search = () => {
   return (
     <div
-      className="d-flex flex-column justify-content-between border border-danger"
+      className="d-flex flex-column justify-content-between"
       style={{ height: "100vh" }}
     >
       <Header />

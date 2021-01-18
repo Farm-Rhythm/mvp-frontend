@@ -5,8 +5,29 @@ import {
   AccordionSummary,
   AccordionDetails,
 } from "@material-ui/core";
+
+import { makeStyles } from "@material-ui/core/styles";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown, faPowerOff } from "@fortawesome/free-solid-svg-icons";
+
+const useStyles = makeStyles({
+  accordion: {
+    boxShadow: "none",
+    "&::before": { height: "0px" },
+    "& .MuiAccordionSummary-root": {
+      borderRadius: "1.2em",
+      height: "2.8em",
+      minHeight: "auto",
+      "&:hover": { backgroundColor: "rgba(255, 184, 0, 0.3)" },
+    },
+    "& .MuiAccordionSummary-root.Mui-expanded": {
+      backgroundColor: "rgba(255, 184, 0)",
+      "&:hover": { backgroundColor: "rgba(255, 184, 0)" },
+      "& .Mui-expanded": { color: "white" },
+    },
+  },
+});
 
 const SearchContent = () => {
   const [expanded, setExpanded] = useState(false);
@@ -14,6 +35,8 @@ const SearchContent = () => {
   const handleChange = (panel) => (event, isExpanded) => {
     setExpanded(isExpanded ? panel : false);
   };
+
+  const classes = useStyles();
 
   return (
     <div
@@ -31,9 +54,10 @@ const SearchContent = () => {
           <Accordion
             expanded={expanded === "panelAll"}
             onChange={handleChange("panelAll")}
+            className={classes.accordion}
           >
             <AccordionSummary
-              expandIcon={<FontAwesomeIcon icon={faAngleDown} />}
+              expandIcon={<FontAwesomeIcon icon={faAngleDown} size="xs" />}
               aria-controls="panelAll-content"
               id="panelAll-header"
             >
@@ -44,9 +68,10 @@ const SearchContent = () => {
           <Accordion
             expanded={expanded === "panelPost"}
             onChange={handleChange("panelPost")}
+            className={classes.accordion}
           >
             <AccordionSummary
-              expandIcon={<FontAwesomeIcon icon={faAngleDown} />}
+              expandIcon={<FontAwesomeIcon icon={faAngleDown} size="xs" />}
               aria-controls="panelPost-content"
               id="panelPost-header"
             >
