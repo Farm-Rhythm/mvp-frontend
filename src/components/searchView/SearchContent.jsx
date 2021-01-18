@@ -16,9 +16,14 @@ const useStyles = makeStyles({
     boxShadow: "none",
     "&::before": { height: "0px" },
     "& .MuiAccordionSummary-root": {
-      borderRadius: "1.2em",
-      height: "2.8em",
+      borderRadius: "1.3em",
+      height: "2.6em",
       minHeight: "auto",
+      "& .MuiAccordionSummary-content": {
+        display: "flex",
+        alignItems: "center",
+      },
+
       "&:hover": { backgroundColor: "rgba(255, 184, 0, 0.3)" },
     },
     "& .MuiAccordionSummary-root.Mui-expanded": {
@@ -26,6 +31,17 @@ const useStyles = makeStyles({
       "&:hover": { backgroundColor: "rgba(255, 184, 0)" },
       "& .Mui-expanded": { color: "white" },
     },
+  },
+  filterIcon: {
+    alignContent: "middle",
+    marginRight: "0.3em",
+    borderRadius: "1em",
+    width: "1.4em",
+    height: "1.4em",
+    background: "#b4b4b4",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
   },
 });
 
@@ -75,7 +91,10 @@ const SearchContent = () => {
               aria-controls="panelPost-content"
               id="panelPost-header"
             >
-              <FontAwesomeIcon icon={faPowerOff} /> Posts
+              <span className={classes.filterIcon}>
+                <FontAwesomeIcon icon={faPowerOff} size="sm" />
+              </span>
+              <span style={{ alignContent: "middle" }}>Posts</span>
             </AccordionSummary>
             <AccordionDetails>bla bla bla bla</AccordionDetails>
           </Accordion>
