@@ -205,7 +205,7 @@ const notifs = [
 
 const unreadNotifCount = notifs.filter(({ unread }) => unread).length;
 
-const Notifications = ({ t }) => {
+const NotificationShortcut = ({ t }) => {
   const classes = style();
   const [anchorEl, setAnchorEl] = useState(null);
 
@@ -298,4 +298,4 @@ const Notifications = ({ t }) => {
   );
 };
 
-export default withNamespaces()(Notifications);
+export default withNamespaces()(NotificationShortcut);

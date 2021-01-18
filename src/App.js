@@ -5,7 +5,7 @@ import Home from "./pages/Home";
 import Sign from "./pages/Sign";
 import Profile from './pages/Profile'
 import Search from './pages/Search'
-import NotificationSmall from './pages/NotificationSmall'
+import Notification from './pages/Notification'
 import '../node_modules/bootstrap/dist/css/bootstrap.css'
 import './App.css'
 
@@ -18,7 +18,7 @@ const App = () => {
         <Route path="/sign" component={Sign} />
         <Route path="/profile" component={Profile} />
         <Route path="/search" component={Search} />
-        <Route path="/notification" component={NotificationSmall} />
+        <Route path="/notification" component={Notification} />
         <Route path="/contact" component={Contact} />
         <Route path="/" component={Home} />
       </Switch>

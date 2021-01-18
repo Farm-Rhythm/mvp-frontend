@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 import ProfileShortcut from "./ProfileShortcut";
-import Notifications from "./Notifications";
+import NotificationShortcut from "./NotificationShortcut";
 import Messaging from "./Messaging";
 import HeaderSearchBar from "./HeaderSearchBar";
 
@@ -47,7 +47,7 @@ const HeaderSmall = () => {
             <img src="assets/images/home.png" alt="home" width="100%" />
           </Link>
 
-          <Notifications />
+          <NotificationShortcut />
 
           <Messaging />
 

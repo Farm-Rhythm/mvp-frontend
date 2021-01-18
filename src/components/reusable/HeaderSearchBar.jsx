@@ -28,20 +28,29 @@ const HeaderSearchBar = ({ t, onSearchPageLocationSmall }) => {
 
   return (
     <>
-      <form style={SEARCH.bar} className="col my-sm-2 mx-2 mx-lg-5" hidden={!onSearchPageLocationSmall}>
+      <form
+        style={SEARCH.bar}
+        className="col my-sm-2 mx-2 mx-lg-5"
+        hidden={!onSearchPageLocationSmall}
+      >
         <FontAwesomeIcon icon={faSearch} color="inherit" className="mx-2" />
         <InputBase
           placeholder={`${t("common.search")}...`}
           fullWidth
-          style={{ color: "#D2BF0E", fontFamily: 'Karla-Italic' }}
+          style={{
+            color: "#D2BF0E",
+            fontFamily: "Karla-Italic",
+            //height: '4px'
+          }}
         />
       </form>
 
-      
       <Link
         to="/search"
         component={RouterLink}
-        className={`${onSearchPageLocationSmall ? 'd-none' : 'd-inline'} d-sm-none`}
+        className={`${
+          onSearchPageLocationSmall ? "d-none" : "d-inline"
+        } d-sm-none`}
       >
         <Avatar style={SEARCH.btn_sm}>
           <FontAwesomeIcon icon={faSearch} color="inherit" size="xs" />

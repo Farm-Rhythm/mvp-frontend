@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 import ProfileShortcut from "./ProfileShortcut";
-import Notifications from "./Notifications";
+import NotificationShortcut from "./NotificationShortcut";
 import Messaging from "./Messaging";
 import HeaderSearchBar from "./HeaderSearchBar";
 
@@ -33,7 +33,7 @@ const HeaderGreat = () => {
         <HeaderSearchBar />
 
         <div className={DYNAMICS_SUBCONTAINER.bootstrap}>
-          <Notifications />
+          <NotificationShortcut />
 
           <Messaging />
 
