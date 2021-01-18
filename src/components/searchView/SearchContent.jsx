@@ -27,18 +27,21 @@ const useStyles = makeStyles({
       "&:hover": { backgroundColor: "rgba(255, 184, 0, 0.3)" },
     },
     "& .MuiAccordionSummary-root.Mui-expanded": {
-      backgroundColor: "rgba(255, 184, 0)",
-      "&:hover": { backgroundColor: "rgba(255, 184, 0)" },
-      "& .Mui-expanded": { color: "white" },
+      backgroundColor: "#F3F3F3",
+      "&:hover": { backgroundColor: "#F3F3F3" },
+    },
+
+    "& .MuiAccordionDetails-root": {
+      borderBottom: "1px solid #E3E3E3",
+      borderRadius: "1.3em",
+      paddingLeft: "3em",
     },
   },
   filterIcon: {
     alignContent: "middle",
     marginRight: "0.3em",
-    borderRadius: "1em",
-    width: "1.4em",
-    height: "1.4em",
-    background: "#b4b4b4",
+    width: "1.8em",
+    height: "1.8em",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
@@ -46,7 +49,7 @@ const useStyles = makeStyles({
 });
 
 const SearchContent = () => {
-  const [expanded, setExpanded] = useState(false);
+  const [expanded, setExpanded] = useState("panelAll");
 
   const handleChange = (panel) => (event, isExpanded) => {
     setExpanded(isExpanded ? panel : false);
@@ -73,30 +76,127 @@ const SearchContent = () => {
             className={classes.accordion}
           >
             <AccordionSummary
-              expandIcon={<FontAwesomeIcon icon={faAngleDown} size="xs" />}
               aria-controls="panelAll-content"
               id="panelAll-header"
             >
+              <span className={classes.filterIcon}>
+                <img
+                  src="assets/images/icon-filter-all.png"
+                  alt="icon-filter-all"
+                  className="w-100"
+                />
+              </span>
               All
             </AccordionSummary>
-            <AccordionDetails>bla bla bla bla</AccordionDetails>
+            
           </Accordion>
           <Accordion
-            expanded={expanded === "panelPost"}
-            onChange={handleChange("panelPost")}
+            expanded={expanded === "panelPosts"}
+            onChange={handleChange("panelPosts")}
             className={classes.accordion}
           >
             <AccordionSummary
               expandIcon={<FontAwesomeIcon icon={faAngleDown} size="xs" />}
-              aria-controls="panelPost-content"
-              id="panelPost-header"
+              aria-controls="panelPosts-content"
+              id="panelPosts-header"
             >
               <span className={classes.filterIcon}>
-                <FontAwesomeIcon icon={faPowerOff} size="sm" />
+                <img
+                  src="assets/images/icon-filter-posts.png"
+                  alt="icon-filter-posts"
+                  className="w-100"
+                />
               </span>
-              <span style={{ alignContent: "middle" }}>Posts</span>
+              Publications
             </AccordionSummary>
-            <AccordionDetails>bla bla bla bla</AccordionDetails>
+            <AccordionDetails>publications options</AccordionDetails>
+          </Accordion>
+          <Accordion
+            expanded={expanded === "panelFarms"}
+            onChange={handleChange("panelFarms")}
+            className={classes.accordion}
+          >
+            <AccordionSummary
+              expandIcon={<FontAwesomeIcon icon={faAngleDown} size="xs" />}
+              aria-controls="panelFarms-content"
+              id="panelFarms-header"
+            >
+              <span className={classes.filterIcon}>
+                <img
+                  src="assets/images/icon-filter-farms.png"
+                  alt="icon-filter-farms"
+                  className="w-100"
+                />
+              </span>
+              Farms
+            </AccordionSummary>
+            <AccordionDetails>farms options</AccordionDetails>
+          </Accordion>
+
+          <Accordion
+            expanded={expanded === "panelPersons"}
+            onChange={handleChange("panelPersons")}
+            className={classes.accordion}
+          >
+            <AccordionSummary
+              expandIcon={<FontAwesomeIcon icon={faAngleDown} size="xs" />}
+              aria-controls="panelPersons-content"
+              id="panelPersons-header"
+            >
+              <span className={classes.filterIcon}>
+                <img
+                  src="assets/images/icon-filter-persons.png"
+                  alt="icon-filter-persons"
+                  className="w-100"
+                />
+              </span>
+              Persons
+            </AccordionSummary>
+            <AccordionDetails>persons options</AccordionDetails>
+          </Accordion>
+
+          <Accordion
+            expanded={expanded === "panelPhotos"}
+            onChange={handleChange("panelPhotos")}
+            className={classes.accordion}
+          >
+            <AccordionSummary
+              expandIcon={<FontAwesomeIcon icon={faAngleDown} size="xs" />}
+              aria-controls="panelPhotos-content"
+              id="panelPhotos-header"
+            >
+              <span className={classes.filterIcon}>
+                <img
+                  src="assets/images/icon-filter-photos.png"
+                  alt="icon-filter-photos"
+                  className="w-100"
+                />
+              </span>
+              Photos
+            </AccordionSummary>
+            <AccordionDetails>photos options</AccordionDetails>
+          </Accordion>
+
+          <Accordion
+            expanded={expanded === "panelVideos"}
+            onChange={handleChange("panelVideos")}
+            className={classes.accordion}
+          >
+            <AccordionSummary
+              expandIcon={<FontAwesomeIcon icon={faAngleDown} size="xs" />}
+              aria-controls="panelVideos-content"
+              id="panelVideos-header"
+            >
+              <span className={classes.filterIcon}>
+                <img
+                  src="assets/images/icon-filter-videos.png"
+                  alt="icon-filter-videos"
+                  className="w-100"
+                />
+              </span>
+              Videos
+            </AccordionSummary>
+            <AccordionDetails>videos options</AccordionDetails>
           </Accordion>
         </div>
       </div>
