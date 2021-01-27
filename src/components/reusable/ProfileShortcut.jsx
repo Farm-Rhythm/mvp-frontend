@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link as RouterLink } from "react-router-dom";
 
 import { ButtonBase, Link, Menu, MenuItem } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCaretDown,
@@ -11,16 +12,21 @@ import {
 
 import { withNamespaces } from "react-i18next";
 
-const GENERAL_CONTAINER = {
+const useStyles = makeStyles({
   root: {
     border: "2px solid white",
+    padding: "0.1em",
     background:
       "linear-gradient(90deg, rgba(210, 191, 14, 0.9) 29.69%, rgba(210, 191, 14, 0.553333) 65.1%, rgba(210, 191, 14, 0.1) 100%)",
+    "@media(max-width: 575.98px)": {
+      padding: "0px",
+    },
   },
-};
+});
 
 const ProfileShortcut = ({ t }) => {
   const [anchorEl, setAnchorEl] = useState(null);
+  const classes = useStyles();
 
   useEffect(() => {
     window.onresize = () => {
@@ -33,8 +39,7 @@ const ProfileShortcut = ({ t }) => {
   return (
     <span className="ml-3">
       <ButtonBase
-        className="rounded-pill text-white p-sm-1 d-none d-sm-inline-flex"
-        style={GENERAL_CONTAINER.root}
+        className={`${classes.root} rounded-pill text-white d-none d-sm-inline-flex`}
         onClick={(event) => setAnchorEl(event.currentTarget)}
         aria-controls="profile-shorcut"
         aria-haspopup="true"
@@ -43,7 +48,7 @@ const ProfileShortcut = ({ t }) => {
           src="assets/images/defaultProfilePic.png"
           alt="defaultProfilePic"
           className="rounded-circle mx-2"
-          style={{ border: "2px solid white", width: "2.25em" }}
+          style={{ border: "2px solid white", width: "2em" }}
         />
         <FontAwesomeIcon icon={faCaretDown} size="2x" className="mx-2" />
       </ButtonBase>
@@ -93,8 +98,7 @@ const ProfileShortcut = ({ t }) => {
       </Menu>
 
       <Link
-        className="rounded-pill text-white d-inline-block d-sm-none"
-        style={GENERAL_CONTAINER.root}
+        className={`${classes.root} rounded-pill text-white d-inline-block d-sm-none`}
         component={RouterLink}
         to="/profile"
       >
@@ -102,7 +106,7 @@ const ProfileShortcut = ({ t }) => {
           src="assets/images/defaultProfilePic.png"
           alt="defaultProfilePic"
           className="rounded-circle mx-2"
-          style={{ border: "2px solid white", width: "2.2em" }}
+          style={{ border: "2px solid white", width: "1.9em" }}
         />
       </Link>
     </span>

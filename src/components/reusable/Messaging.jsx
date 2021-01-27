@@ -7,11 +7,11 @@ const style = makeStyles({
     backgroundColor: "white",
     position: "absolute",
     fontFamily: "Lemonada-Bold",
-    fontSize: "11px",
+    fontSize: "10px",
     right: "-25%",
     top: -5,
-    width: "22px",
-    height: "22px",
+    width: "20px",
+    height: "20px",
     borderRadius: "50%",
     display: "flex",
     justifyContent: "center",
@@ -23,10 +23,7 @@ const Messaging = () => {
   const classes = style();
 
   return (
-    <ButtonBase
-      style={{ position: "relative", width: "2.3em" }}
-      className="mx-3"
-    >
+    <ButtonBase style={{ position: "relative", width: "2em" }} className="mx-3">
       {/* messageBox */}
       <img src="assets/images/messageBox.png" alt="messageBox" width="100%" />
       <div className={classes.unreadBadge}>

@@ -16,13 +16,15 @@ const DYNAMICS_SUBCONTAINER = {
 };
 
 const HeaderSmall = () => {
-
   const onSearchPageLocation = window.location.pathname === "/search";
 
   return (
     <div style={GENERAL_CONTAINER.root}>
       <div className="d-flex flex-column align-items-center">
-        <div style={{ backgroundColor: "#FFB800" }} className="p-2 col d-flex">
+        <div
+          style={{ backgroundColor: "#FFB800", padding: '0.4em 0.7em' }}
+          className="col d-flex"
+        >
           <span
             style={{ fontFamily: "Lemonada-Bold", color: "white" }}
             className="mx-3"
@@ -41,7 +43,7 @@ const HeaderSmall = () => {
           <Link
             to="/"
             className="d-flex mr-3"
-            style={{ position: "relative", width: "2.4em" }}
+            style={{ position: "relative", width: "2em" }}
           >
             {/* Home link */}
             <img src="assets/images/home.png" alt="home" width="100%" />

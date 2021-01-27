@@ -14,11 +14,11 @@ const style = makeStyles({
     backgroundColor: "white",
     position: "absolute",
     fontFamily: "Lemonada-Bold",
-    fontSize: "11px",
+    fontSize: "10px",
     right: "-25%",
     top: -5,
-    width: "22px",
-    height: "22px",
+    width: "20px",
+    height: "20px",
     borderRadius: "50%",
     display: "flex",
     justifyContent: "center",
@@ -220,7 +220,7 @@ const NotificationShortcut = ({ t }) => {
   return (
     <span>
       <ButtonBase
-        style={{ position: "relative", width: "2.2em" }}
+        style={{ position: "relative", width: "1.8em" }}
         className="mx-3 d-none d-sm-inline"
         onClick={(event) => setAnchorEl(event.currentTarget)}
       >
@@ -233,7 +233,7 @@ const NotificationShortcut = ({ t }) => {
       </ButtonBase>
 
       <Link
-        style={{ position: "relative", width: "2.1em" }}
+        style={{ position: "relative", width: "1.75em" }}
         className="d-inline-block d-sm-none"
         component={RouterLink}
         to="/notification"

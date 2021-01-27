@@ -13,6 +13,7 @@ const SEARCH = {
     color: "#D2BF0E",
     display: "flex",
     alignItems: "center",
+    height: "2em",
   },
   btn_sm: {
     borderRadius: "10px",
@@ -30,7 +31,7 @@ const HeaderSearchBar = ({ t, onSearchPageLocationSmall }) => {
     <>
       <form
         style={SEARCH.bar}
-        className="col my-sm-2 mx-2 mx-lg-5"
+        className="col col-md-8 col-lg-5 my-sm-2 mx-2 mx-lg-5"
         hidden={!onSearchPageLocationSmall}
       >
         <FontAwesomeIcon icon={faSearch} color="inherit" className="mx-2" />
@@ -40,7 +41,7 @@ const HeaderSearchBar = ({ t, onSearchPageLocationSmall }) => {
           style={{
             color: "#D2BF0E",
             fontFamily: "Karla-Italic",
-            //height: '4px'
+            fontSize: '1em'
           }}
         />
       </form>

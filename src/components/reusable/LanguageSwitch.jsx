@@ -25,21 +25,25 @@ const LanguageSwitch = ({ t, btnVariant }) => {
 
   return (
     <>
-      
-        <Button
-          style={{ fontFamily: "karla-Italic", textTransform: "none" }}
-          variant={btnVariant || "text"}
-          color="inherit"
-          startIcon={<Translate />}
-          endIcon={<ArrowDropUp />}
-          className="py-1"
-          onClick={(event) => setAnchorEl(event.currentTarget)}
-          aria-controls="language-selection"
-          aria-haspopup="true"
-        >
-          {t("common.language")}
-        </Button>
-    
+      <Button
+        style={{
+          fontFamily: "karla-Italic",
+          textTransform: "none",
+          // height: "10px",
+          fontSize: 'small'
+        }}
+        variant={btnVariant || "text"}
+        size='small'
+        color="inherit"
+        startIcon={<Translate />}
+        endIcon={<ArrowDropUp />}
+        className="my-1"
+        onClick={(event) => setAnchorEl(event.currentTarget)}
+        aria-controls="language-selection"
+        aria-haspopup="true"
+      >
+        {t("common.language")}
+      </Button>
 
       <Menu
         id="language-selection"
