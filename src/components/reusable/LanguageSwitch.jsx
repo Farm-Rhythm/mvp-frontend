@@ -7,8 +7,10 @@ import i18n from "../../i18n";
 
 import { withNamespaces } from "react-i18next";
 
-const LanguageSwitch = ({ t, btnVariant }) => {
+
+const LanguageSwitch = ({ t, btnVariant, btnSize }) => {
   const [anchorEl, setAnchorEl] = useState(null);
+  
 
   function selectLang(lang) {
     if (lang !== i18n.language) {
@@ -29,11 +31,9 @@ const LanguageSwitch = ({ t, btnVariant }) => {
         style={{
           fontFamily: "karla-Italic",
           textTransform: "none",
-          // height: "10px",
-          fontSize: 'small'
         }}
         variant={btnVariant || "text"}
-        size='small'
+        size={btnSize || "medium"}
         color="inherit"
         startIcon={<Translate />}
         endIcon={<ArrowDropUp />}

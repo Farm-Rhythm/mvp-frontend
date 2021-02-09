@@ -38,34 +38,32 @@ const Footer = ({t}) => {
       style={GENERAL_CONTAINER.root}
       className={GENERAL_CONTAINER.bootstrap}
     >
-      
-        <LanguageSwitch btnVariant="outlined" />
-        <span className="px-2 px-md-3">
-          <Contracts />
-        </span>
-        <span className="px-2 px-md-3">
-          <Link
-            className="text-reset text-capitalize"
-            underline="always"
-            component={RouterLink}
-            to="/"
-          >
-            {t("common.home")}
-          </Link>
-          &nbsp; &nbsp; &nbsp;
-          <Link
-            className="text-reset text-capitalize"
-            underline="always"
-            component={RouterLink}
-            to="/contact"
-          >
-            {t("common.contact")}
-          </Link>
-        </span>
-        <span className={classes.spanCopyright}>
-          Farm Rhythm © copyright 2020
-        </span>
-      
+      <LanguageSwitch btnVariant="outlined" btnSize="small" />
+      <span className="px-2 px-md-3">
+        <Contracts />
+      </span>
+      <span className="px-2 px-md-3">
+        <Link
+          className="text-reset text-capitalize"
+          underline="always"
+          component={RouterLink}
+          to="/"
+        >
+          {t("common.home")}
+        </Link>
+        &nbsp; &nbsp; &nbsp;
+        <Link
+          className="text-reset text-capitalize"
+          underline="always"
+          component={RouterLink}
+          to="/contact"
+        >
+          {t("common.contact")}
+        </Link>
+      </span>
+      <span className={classes.spanCopyright}>
+        Farm Rhythm © copyright 2020
+      </span>
     </Container>
   );
 };

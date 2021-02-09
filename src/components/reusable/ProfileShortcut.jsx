@@ -37,13 +37,14 @@ const ProfileShortcut = ({ t }) => {
   });
 
   return (
-    <span className="ml-3">
+    <span className="ml-3 d-block p-0">
       <ButtonBase
         className={`${classes.root} rounded-pill text-white d-none d-sm-inline-flex`}
         onClick={(event) => setAnchorEl(event.currentTarget)}
         aria-controls="profile-shorcut"
         aria-haspopup="true"
       >
+        
         <img
           src="assets/images/defaultProfilePic.png"
           alt="defaultProfilePic"

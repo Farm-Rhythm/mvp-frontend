@@ -31,17 +31,17 @@ const HeaderSearchBar = ({ t, onSearchPageLocationSmall }) => {
     <>
       <form
         style={SEARCH.bar}
-        className="col col-md-8 col-lg-5 my-sm-2 mx-2 mx-lg-5"
+        className="col col-md-7 col-lg-5 my-sm-2 mx-2 mx-lg-5"
         hidden={!onSearchPageLocationSmall}
       >
         <FontAwesomeIcon icon={faSearch} color="inherit" className="mx-2" />
         <InputBase
-          placeholder={`${t("common.search")}...`}
+          placeholder={t("common.search")}
           fullWidth
           style={{
             color: "#D2BF0E",
             fontFamily: "Karla-Italic",
-            fontSize: '1em'
+            fontSize: "1em",
           }}
         />
       </form>

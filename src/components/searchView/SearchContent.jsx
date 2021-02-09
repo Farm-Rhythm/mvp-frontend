@@ -1,191 +1,14 @@
 import { useState, useRef, useEffect } from "react";
 
-import {
-  Accordion,
-  AccordionSummary,
-  AccordionDetails,
-  SwipeableDrawer,
-} from "@material-ui/core";
+import FiltersBlockContent from "./FiltersBlockContent";
 
-import { makeStyles } from "@material-ui/core/styles";
+import { SwipeableDrawer } from "@material-ui/core";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faAngleDown,
-  faFilter,
-  faWindowClose,
-} from "@fortawesome/free-solid-svg-icons";
+import { faFilter } from "@fortawesome/free-solid-svg-icons";
 
-const useStyles = makeStyles({
-  accordion: {
-    boxShadow: "none",
-    "&::before": { height: "0px" },
-    "& .MuiAccordionSummary-root": {
-      borderRadius: "1.3em",
-      height: "2.6em",
-      minHeight: "auto",
-      "& .MuiAccordionSummary-content": {
-        display: "flex",
-        alignItems: "center",
-      },
 
-      "&:hover": { backgroundColor: "rgba(255, 184, 0, 0.3)" },
-    },
-    "& .MuiAccordionSummary-root.Mui-expanded": {
-      backgroundColor: "#F3F3F3",
-      "&:hover": { backgroundColor: "#F3F3F3" },
-    },
 
-    "& .MuiAccordionDetails-root": {
-      borderBottom: "1px solid #E3E3E3",
-      borderRadius: "1.3em",
-      paddingLeft: "3em",
-      fontSize: "small",
-      display: "flex",
-      flexDirection: "column",
-      "& span": {
-        padding: "0.3em 0.6em",
-        borderRadius: "0.5em",
-      },
-      "& span:hover": {
-        backgroundColor: "rgba(255, 184, 0, 0.3)",
-      },
-    },
-  },
-  filterIcon: {
-    alignContent: "middle",
-    marginRight: "0.3em",
-    width: "1.8em",
-    height: "1.8em",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
-
-const FiltersBlockContent = ({ closePanel }) => {
-  const classes = useStyles();
-  const [expandedFilter, setExpandedFilter] = useState("panelAll");
-
-  const handleChangeFilters = (panel) => (event, isExpandedFilter) => {
-    setExpandedFilter(panel);
-    //console.log(isExpandedFilter);
-  };
-
-  return (
-    <>
-      <div className="p-3 d-flex justify-content-between border-bottom">
-        <span>
-          <span className="h5 font-weight-bold">Search results for</span>
-          <br />"<span className="text-secondary">bony</span>"
-        </span>
-        <button onClick={() => closePanel(false)} className="btn">
-          <FontAwesomeIcon icon={faWindowClose} />
-        </button>
-      </div>
-
-      <div className="p-3">
-        <div className="h5">Filter</div>
-        <Accordion
-          expanded={expandedFilter === "panelAll"}
-          onChange={handleChangeFilters("panelAll")}
-          className={classes.accordion}
-        >
-          <AccordionSummary
-            aria-controls="panelAll-content"
-            id="panelAll-header"
-          >
-            <span className={classes.filterIcon}>
-              <img
-                src="assets/images/icon-filter-all.png"
-                alt="icon-filter-all"
-                className="w-100"
-              />
-            </span>
-            All
-          </AccordionSummary>
-        </Accordion>
-        <Accordion
-          expanded={expandedFilter === "panelPosts"}
-          onChange={handleChangeFilters("panelPosts")}
-          className={classes.accordion}
-        >
-          <AccordionSummary
-            expandIcon={<FontAwesomeIcon icon={faAngleDown} size="xs" />}
-            aria-controls="panelPosts-content"
-            id="panelPosts-header"
-          >
-            <span className={classes.filterIcon}>
-              <img
-                src="assets/images/icon-filter-posts.png"
-                alt="icon-filter-posts"
-                className="w-100"
-              />
-            </span>
-            Publications
-          </AccordionSummary>
-          <AccordionDetails>
-            {/* <span>Publications que vous avez vues</span> */}
-            <span role="button">Date de publication</span>
-            <span role="button">Publications de :</span>
-            <span role="button">
-              Publications concernant le projet agricole :
-            </span>
-          </AccordionDetails>
-        </Accordion>
-        <Accordion
-          expanded={expandedFilter === "panelFarms"}
-          onChange={handleChangeFilters("panelFarms")}
-          className={classes.accordion}
-        >
-          <AccordionSummary
-            expandIcon={<FontAwesomeIcon icon={faAngleDown} size="xs" />}
-            aria-controls="panelFarms-content"
-            id="panelFarms-header"
-          >
-            <span className={classes.filterIcon}>
-              <img
-                src="assets/images/icon-filter-farms.png"
-                alt="icon-filter-farms"
-                className="w-100"
-              />
-            </span>
-            Projets agricoles
-          </AccordionSummary>
-          <AccordionDetails>
-            <span role="button">Date de publication</span>
-            <span role="button">Publications de :</span>
-            <span role="button">
-              Publications concernant le projet agricole :
-            </span>
-          </AccordionDetails>
-        </Accordion>
-
-        <Accordion
-          expanded={expandedFilter === "panelPersons"}
-          onChange={handleChangeFilters("panelPersons")}
-          className={classes.accordion}
-        >
-          <AccordionSummary
-            expandIcon={<FontAwesomeIcon icon={faAngleDown} size="xs" />}
-            aria-controls="panelPersons-content"
-            id="panelPersons-header"
-          >
-            <span className={classes.filterIcon}>
-              <img
-                src="assets/images/icon-filter-persons.png"
-                alt="icon-filter-persons"
-                className="w-100"
-              />
-            </span>
-            Persons
-          </AccordionSummary>
-          <AccordionDetails>persons options</AccordionDetails>
-        </Accordion>
-      </div>
-    </>
-  );
-};
 
 const SearchContent = () => {
   const rootRef = useRef(null);
@@ -241,7 +64,7 @@ const SearchContent = () => {
           container={() => rootRef.current}
         >
           <FiltersBlockContent
-            closePanel={toggleDrawer}
+            closePanel={() => setStateDrawerSmDevices(false)}
           />
         </SwipeableDrawer>
       </div>

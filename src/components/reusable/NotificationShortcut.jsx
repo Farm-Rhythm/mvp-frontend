@@ -221,7 +221,7 @@ const NotificationShortcut = ({ t }) => {
     <span>
       <ButtonBase
         style={{ position: "relative", width: "1.8em" }}
-        className="mx-3 d-none d-sm-inline"
+        className="ml-md-2 mr-3 d-none d-sm-inline"
         onClick={(event) => setAnchorEl(event.currentTarget)}
       >
         {/* Notifications greater than mobile */}

@@ -22,7 +22,7 @@ const DYNAMICS_CONTAINER = {
 };
 
 const DYNAMICS_SUBCONTAINER = {
-  bootstrap: "col col-md-auto text-righ px-2 px-md-0 d-block",
+  bootstrap: "d-flex align-items-center col col-md-auto px-2 px-md-0",
 };
 
 const HeaderGreat = () => {
