@@ -36,3 +36,15 @@ Farm Rhythm est une application web et mobile qui permet à un agriculteur de do
 
 - ### Découpage de la page :
 ![layout contact](documentation/../documentations/imgsDoc/layout%20contact%20page.png)
+
+
+### **Sign page**
+- ### Design proposé :
+    ![sign page](documentations/imgsDoc/registration%20page.png)
+
+- ### Fonctionnalité : 
+  Cette page est la première interaction avec un nouvel utilisateur. C'est une page de connexion et d'enregistrement où l'utilisateur remplir et soumet un des formulaires. L'utilisateur a également la possibilité de se connecter en utlisant l'API d'authentification d'autre réseaux sociaux.
+  
+
+- ### Découpage de la page :
+![sign contact](documentation/../documentations/imgsDoc/layout%20sign%20page.png)
