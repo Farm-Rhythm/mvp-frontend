@@ -48,3 +48,27 @@ Farm Rhythm est une application web et mobile qui permet à un agriculteur de do
 
 - ### Découpage de la page :
 ![sign contact](documentation/../documentations/imgsDoc/layout%20sign%20page.png)
+
+
+### **Messages page**
+- ### Design proposé :
+    ![message page](documentations/imgsDoc/Message%20page.png)
+
+- ### Fonctionnalité : 
+  Il s'agit de la boîte de messagerie de l'application. L'utilisateurs peut y initier une conversation ou continuer à dialoguer avec ses interlocuteurs. Les conversations sont de 02 types (privée ou de groupe).
+
+  Ses **sous-composants** importants sont les suivants :
+    - ### ConversationsPanel:
+      - **CreateConversationBtn** : bouton de lancement d'une fenêtre modale où va se dérouler le processus de création d'une conversation
+      - **SearchConversationBar** : champ de recherche d'une conversation par mot clé
+      - **ConversationsNavBar**: Block de navigation entre les conversations
+    - ### DiscussionBox: 
+      - **Description** : affichage du titre de la conversation et lors d'un click, apparition d'un block de description plus détailée de la conversation.
+      - **SettingBtn** : button faisant apparaître un menu rassemblant les interactions possibles sur le box de discussion et son contenu.
+      - **SearchInDiscussionBtn** : champ de recherche de mots dans une discussion.
+      - **MessagesScreen** : block d'affichage des messages d'une discussion.
+      - **SendMessage** : champ d'insertion de texte, bouton d'envoi de message, d'enregistrement vocal, de sélection d'émoji.
+  
+
+- ### Découpage de la page :
+![sign contact](documentation/../documentations/imgsDoc/layout%20messages%20page.png)
