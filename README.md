@@ -13,7 +13,7 @@ Farm Rhythm est une application web et mobile qui permet à un agriculteur de do
   - **SearchBarHeader** : Permettre de lancer la recherche d'un mot ou d'une catégories dans la base de donnée de l'application. Exécuter la recherche d'un mot redirige la page vers la page **Search**.
   - **NotificationsShortcut** : affichage du nombre de notification non lues et ouverture/fermeture (*click* 🖱️) d'un sous-menu contenant les 20 dernieres notifications
   - **MessagesBox** : affichage du nombre de conversations non lues et redirection (*click* 🖱️) à la page **Messages**
-  - **ProfileShorcut** : ouverture/fermeture (*click* 🖱️) d'un sous-menu contenant un lien de redirection à la page Profile et un bouton de déconnexion du compte.
+  - **ProfileShorcut** : ouverture/fermeture (*click* 🖱️) d'un sous-menu contenant un bouton permettant de faire apparaître le composant **BlocNotes**, un lien de redirection à la page Profile et un bouton de déconnexion du compte.
 
 ### Composant Footer
 - ### Design proposé :
@@ -72,3 +72,23 @@ Farm Rhythm est une application web et mobile qui permet à un agriculteur de do
 
 - ### Découpage de la page :
 ![sign contact](documentation/../documentations/imgsDoc/layout%20messages%20page.png)
+
+
+### **Search page**
+- ### Design proposé :
+    ![search page](documentations/imgsDoc/search%20page.png)
+
+- ### Fonctionnalité : 
+  L'objectif générale de la page est de permettre à l'utilisateur de trouver l'information qui lui est utile dans note base de donnée. Nos recherches portent sur 3 grandes catégories (publications, farms, personnes)
+
+  Les **sous-composants** importants de cette page sont :
+    - **SearchPanelMenu** :
+      - **FilterOverview** : aperçu de la recherche éffectuée et 
+      - **FilterBlock** : interface de selection des paramètres des filtres
+      
+    - **SearchResult** : affichage des resultats de recherche sous forme de block d'infos
+      
+  
+
+- ### Découpage de la page :
+![sign contact](documentation/../documentations/imgsDoc/layout%20search%20page.png)
