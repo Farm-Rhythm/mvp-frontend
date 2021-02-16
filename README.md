@@ -23,7 +23,16 @@ Farm Rhythm est une application web et mobile qui permet à un agriculteur de do
   - **LanguageSwitch** : Sélectionner un nouvelle langue pour l'affichage du contenu de l'application.
   - **Contracts** : 02 buttons d'ouverture (*click* 🖱️) d'une fenêtre modale contenant les contracts : **Conditions d'Utilisation** et **Politique de Confidentialité**.
   - **Liens vers pages** : 02 liens de redirection vers les pages **Accueil** et **Contact**
-  
+
+
+### Composant NetworkingBlock
+- ### Design proposé :
+    ![NetworkingBlock](documentations/imgsDoc/networking.png)
+
+- ### Fonctionnalités (sous-composants) : 
+  - **ConnectOthers** : affichage de composant **ConnectTo** qui représente une fonction de mise en relation avec un autre utilisateur, ce composant sert égalemnt d'affichage d'un succinte description de l'utilisateur taggé.
+  - **BrandBlock** : Ce composant sert à l'affichage de publicité engageante de notre solution.
+
 
 ## Composants spécifiques aux pages
 
@@ -92,3 +101,22 @@ Farm Rhythm est une application web et mobile qui permet à un agriculteur de do
 
 - ### Découpage de la page :
 ![sign contact](documentation/../documentations/imgsDoc/layout%20search%20page.png)
+
+
+### **Notification page**
+- ### Design proposé :
+    ![notification page](documentations/imgsDoc/Notification%20page.png)
+
+- ### Fonctionnalité : 
+  Cette page permet d'afficher toutes les notification d'un utilisateur en quantité de 30 chacunes
+
+  Les **sous-composants** importants de cette page sont :
+    - **NotificationsBlock** : ce composant affiche les notifications et permet de les marquer comme lue
+      
+      
+    - **NetworkingBlock** : composant servant de panneu marketing
+      
+  
+
+- ### Découpage de la page :
+![sign contact](documentation/../documentations/imgsDoc/layout%20notification%20page.png)
